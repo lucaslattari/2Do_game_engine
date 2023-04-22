@@ -1,0 +1,10 @@
+# Ignore PNG images
+*.png
+
+# Ignore TMX files
+*.tmx
+
+maps/
+graphics/
+__pycache__/
+venv_pythongame/
