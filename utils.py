@@ -1,4 +1,4 @@
-import pygame, configparser
+import pygame, configparser, os
 
 
 def render_fps(fps, screen):

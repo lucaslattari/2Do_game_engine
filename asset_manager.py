@@ -1,5 +1,7 @@
 import pytmx
 
+TILE_TYPES = ["Player", "Item", "Platform"]
+
 
 class AssetManager:
     def __init__(self, level):
@@ -8,69 +10,47 @@ class AssetManager:
         self.tile_height = level.tileheight
 
     def load_tiles(self, level):
-        tiles = {}
-        tiles["Player"] = []
-        tiles["Item"] = []
-        tiles["Terrain"] = []
-        tiles["Platform"] = []
-
+        tiles = {tile_type: [] for tile_type in TILE_TYPES}
         gid_to_position = {}
-        for layer in level.visible_layers:
-            for x, y, gid in layer:
-                if gid not in gid_to_position:
-                    gid_to_position[gid] = []
-                gid_to_position[gid].append((x, y))
 
+        # Gather positions of gids
+        for layer in level.layers:
+            for x, y, gid in layer:
+                gid_to_position.setdefault(gid, []).append((x, y))
+
+        # Populate tiles
         for tileset in level.tilesets:
             for gid in range(tileset.firstgid, tileset.firstgid + tileset.tilecount):
                 tile = level.get_tile_properties_by_gid(gid)
+                if not tile:
+                    continue
                 tile["gid"] = gid
-
-                if gid in gid_to_position:
-                    tile["position"] = gid_to_position[gid]
-
-                if (
-                    tile["type"] == "Player"
-                    or tile["type"] == "Item"
-                    or tile["type"] == "Platform"
-                ):
-                    if "frames" in tile:
-                        sprites = []
-                        for frame in tile["frames"]:
-                            sprites.append(level.get_tile_image_by_gid(frame.gid))
-                        tile["sprites"] = sprites
-                elif tile["type"] == "Terrain":
-                    tile["sprites"] = []
-                    tile["sprites"].append(level.get_tile_image_by_gid(tile["gid"]))
-
-                if tile["type"] == "Player":
-                    if tile["frames"]:
-                        tiles["Player"].append(tile)
-
-                if tile["type"] == "Item":
-                    if tile["frames"]:
-                        tiles["Item"].append(tile)
-
-                if tile["type"] == "Terrain":
-                    if "position" in tile:
-                        tiles["Terrain"].append(tile)
-
-                if tile["type"] == "Platform":
-                    if tile["frames"]:
-                        tiles["Platform"].append(tile)
+                self.update_tiles(tile, tiles, gid_to_position.get(gid), level)
 
         return tiles
 
+    def update_tiles(self, tile, tiles, gid_to_position, level):
+        tile_type = tile["type"]
+        if any(tile_type.startswith(term) for term in TILE_TYPES):
+            tile["sprites"] = self.load_sprites(level, tile)
+
+            if gid_to_position:
+                tile["position"] = gid_to_position
+
+            tile_type = tile_type.split("_")[0]
+            if "position" in tile:
+                tiles[tile_type].append(tile)
+
+    def load_sprites(self, level, tile):
+        sprites = []
+        frames = tile.get("frames", [])
+
+        if not frames:
+            sprites.append(level.get_tile_image_by_gid(tile["gid"]))
+        else:
+            for frame in frames:
+                sprites.append(level.get_tile_image_by_gid(frame.gid))
+        return sprites
+
     def get_asset(self, type):
         return self.tiles[type]
-
-    """
-    def get_tile_image(self, gid):
-        return self.tmx_data.get_tile_image_by_gid(gid)
-
-    def get_tile_properties(self, gid):
-        return self.tmx_data.get_tile_properties_by_gid(gid)
-
-    def get_tileset_range(self, tileset):
-        return range(tileset.firstgid, tileset.firstgid + tileset.tilecount)
-    """

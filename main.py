@@ -5,6 +5,7 @@ import time
 import logging
 
 from game import Game
+from input_handler import InputHandler
 from utils import *
 
 logger = logging.getLogger(__name__)
@@ -26,22 +27,30 @@ game.screen.set_colorkey((0, 0, 0))  # define transparent
 game.load_level("maps/level1.tmx")
 logger.info("Nível carregado")
 
+input_handler = InputHandler()
+
 clock = pygame.time.Clock()
 running = True
 
 while running:
     delta_time = clock.tick(60) / 1000  # tempo decorrido desde o último frame
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+    input_handler.update()
 
-        # Check for the KEYDOWN event and the ESC key
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                running = False
+    """
+    if input_handler.is_pressed("up"):
+        print("Moving Up!")
+    if input_handler.is_pressed("down"):
+        print("Moving Down!")
+    if input_handler.is_pressed("left"):
+        print("Moving Left!")
+    if input_handler.is_pressed("right"):
+        print("Moving Right!")
+    if input_handler.is_pressed("jump"):
+        print("Jumping!")
+    """
 
-    game.update(delta_time)
+    game.update(delta_time, input_handler)
 
     # Clear the screen with a background color
     game.screen.fill((0, 0, 0))

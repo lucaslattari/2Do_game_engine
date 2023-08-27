@@ -4,7 +4,6 @@ import pygame, pytmx, configparser
 from asset_manager import AssetManager
 from player import Player
 from item import Item
-from terrain import Terrain
 from platformer import Platform
 
 from background import Background
@@ -35,17 +34,13 @@ class Game:
         self.player = Player(self.asset_manager.get_asset("Player"))
         self.item = Item(self.asset_manager.get_asset("Item"))
         self.platform = Platform(self.asset_manager.get_asset("Platform"))
-        self.terrain = Terrain(self.asset_manager.get_asset("Terrain"))
 
     def get_block_size(self):
         return self.tiled_level.tilewidth, self.tiled_level.tileheight
 
-    def update(self, delta_time):
+    def update(self, delta_time, input_handler):
         if self.background:
             self.background.update(delta_time)
-
-        if self.terrain:
-            self.terrain.update(delta_time)
 
         if self.item:
             self.item.update(delta_time)
@@ -54,16 +49,13 @@ class Game:
             self.platform.update(delta_time)
 
         if self.player:
-            self.player.update(delta_time)
+            self.player.update(delta_time, input_handler)
 
     def render(self, screen):
         block_size = self.get_block_size()
 
         if self.background:
             self.background.render(screen, block_size)
-
-        if self.terrain:
-            self.terrain.render(screen, block_size)
 
         if self.item:
             self.item.render(screen, block_size)

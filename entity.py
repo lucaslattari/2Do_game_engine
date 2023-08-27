@@ -1,31 +1,27 @@
 class Entity:
-    def __init__(self, data):
-        self.parse(data)
+    def __init__(self, tile_data):
+        self.tiles = []
+        self.parse(tile_data)
 
-    def parse(self, data):
-        self.entities = []
-        for d in data:
-            entity = {}
-            entity["current_frame"] = 0
-            entity["timer_next_frame"] = 0.0
+    def parse(self, tile_data):
+        for t in tile_data:
+            tile = {
+                "current_frame": 0,
+                "timer_next_frame": 0.0,
+                "id": t.get("id"),
+                "width": t.get("width"),
+                "height": t.get("height"),
+                "position": t.get("position", []).copy(),
+                "sprites": t.get("sprites"),
+            }
 
-            entity["id"] = d["id"]
-            entity["width"] = d["width"]
-            entity["height"] = d["height"]
-            entity["position"] = []
-
-            for position in d["position"]:
-                entity["position"].append(position)
-
-            entity["sprites"] = d["sprites"]
-
-            self.entities.append(entity)
+            self.tiles.append(tile)
 
     def render(self, screen, block_size):
-        for entity in self.entities:
-            for position in entity["position"]:
+        for tile in self.tiles:
+            for position in tile["position"]:
                 screen.blit(
-                    entity["sprites"][entity["current_frame"]],
+                    tile["sprites"][tile["current_frame"]],
                     (
                         position[0] * block_size[0],
                         position[1] * block_size[1],
@@ -33,11 +29,11 @@ class Entity:
                 )
 
     def update(self, delta_time):
-        for entity in self.entities:
-            if entity["timer_next_frame"] > delta_time:
-                entity["current_frame"] = (entity["current_frame"] + 1) % len(
-                    entity["sprites"]
+        for tile in self.tiles:
+            if tile["timer_next_frame"] > delta_time:
+                tile["current_frame"] = (tile["current_frame"] + 1) % len(
+                    tile["sprites"]
                 )
-                entity["timer_next_frame"] -= delta_time
+                tile["timer_next_frame"] -= delta_time
             else:
-                entity["timer_next_frame"] += delta_time
+                tile["timer_next_frame"] += delta_time
