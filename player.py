@@ -14,14 +14,17 @@ class Player(Entity):
         self.x = self.tiles[0]["position"][0][0]  # todo: consertar isso daqui
         self.y = self.tiles[0]["position"][0][1]
 
+        self.width = self.tiles[0]["width"]
+        self.height = self.tiles[0]["height"]
+
         self.velocity = 0.0
-        self.max_velocity = 7.0
-        self.acceleration = 0.2
-        self.deceleration = 0.2
+        self.max_velocity = 10.0
+        self.acceleration = 0.4
+        self.deceleration = 0.4
 
         self.vertical_velocity = 0.0
-        self.jump_acceleration = -15.0
-        self.gravity = 9.8
+        self.jump_acceleration = -11.0
+        self.gravity = 12.8
         self.on_ground = True
 
     def parse(self, tile_data):
@@ -53,10 +56,9 @@ class Player(Entity):
                     (self.x * block_size[0], self.y * block_size[1]),
                 )
 
-    def update(self, delta_time, input_handler):
-        print(self.x, self.y, self.on_ground)
+    def update(self, delta_time, input_handler, tiles):
         self.update_state_and_velocity(input_handler)
-        self.update_position(delta_time)
+        self.update_position(delta_time, tiles)
         self.update_animation_frames(delta_time)
 
     def update_state_and_velocity(self, input_handler):
@@ -83,17 +85,55 @@ class Player(Entity):
         elif self.velocity < 0:
             self.velocity = min(0, self.velocity + self.deceleration)
 
-    def update_position(self, delta_time):
-        self.x += self.velocity * delta_time
-        self.y += self.vertical_velocity * delta_time
+    def update_position(self, delta_time, tiles):
+        new_x, new_y = self.calculate_new_positions(delta_time)
+        new_x = self.handle_horizontal_collision(new_x, new_y, tiles)
+        new_y = self.handle_vertical_collision(new_x, new_y, tiles, delta_time)
 
-        # Aplicando a gravidade
+        self.x = new_x
+        self.y = new_y
+
+    def calculate_new_positions(self, delta_time):
+        new_x = self.x + self.velocity * delta_time
+        new_y = self.y + self.vertical_velocity * delta_time
+        return new_x, new_y
+
+    def handle_horizontal_collision(self, new_x, current_y, tiles):
+        player_rect = (new_x * 16, current_y * 16, self.width, self.height)
+        for tile in tiles:
+            if "collidable" in tile and tile["collidable"]:
+                for position in tile["position"]:
+                    tile_rect = (
+                        position[0] * 16,
+                        position[1] * 16,
+                        tile["width"],
+                        tile["height"],
+                    )
+                    if self.check_collision(player_rect, tile_rect):
+                        return self.x  # Reset x position if collision detected
+        return new_x  # Otherwise, return new x position
+
+    def handle_vertical_collision(self, current_x, new_y, tiles, delta_time):
+        self.on_ground = False
+        player_rect = (current_x * 16, new_y * 16, self.width, self.height)
+        for tile in tiles:
+            if "collidable" in tile and tile["collidable"]:
+                for position in tile["position"]:
+                    tile_rect = (
+                        position[0] * 16,
+                        position[1] * 16,
+                        tile["width"],
+                        tile["height"],
+                    )
+                    if self.check_collision(player_rect, tile_rect):
+                        self.on_ground = True
+                        self.vertical_velocity = 0
+                        return self.y  # Reset y position if collision detected
+
         if not self.on_ground:
             self.vertical_velocity += self.gravity * delta_time
-            if self.y >= 22:
-                self.vertical_velocity = 0.0
-                self.on_ground = True
-                self.state = "idle"
+
+        return new_y  # Otherwise, return new y position
 
     def update_animation_frames(self, delta_time):
         for tile in self.tiles:

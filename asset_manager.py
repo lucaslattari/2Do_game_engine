@@ -25,6 +25,10 @@ class AssetManager:
                 if not tile:
                     continue
                 tile["gid"] = gid
+
+                # Verificar a propriedade 'collidable'
+                tile["collidable"] = tile.get("collidable", False)
+
                 self.update_tiles(tile, tiles, gid_to_position.get(gid), level)
 
         return tiles

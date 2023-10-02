@@ -13,6 +13,7 @@ class Entity:
                 "height": t.get("height"),
                 "position": t.get("position", []).copy(),
                 "sprites": t.get("sprites"),
+                "collidable": t.get("collidable"),
             }
 
             self.tiles.append(tile)
@@ -37,3 +38,8 @@ class Entity:
                 tile["timer_next_frame"] -= delta_time
             else:
                 tile["timer_next_frame"] += delta_time
+
+    def check_collision(self, rect1, rect2):
+        x1, y1, w1, h1 = tuple(map(int, rect1))
+        x2, y2, w2, h2 = tuple(map(int, rect2))
+        return x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2

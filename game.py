@@ -49,7 +49,7 @@ class Game:
             self.platform.update(delta_time)
 
         if self.player:
-            self.player.update(delta_time, input_handler)
+            self.player.update(delta_time, input_handler, self.platform.tiles)
 
     def render(self, screen):
         block_size = self.get_block_size()
