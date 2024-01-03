@@ -3,6 +3,7 @@ import pygame
 from entity import Entity
 
 ANIMATION_TYPES = ["run", "idle", "jump"]
+SPRITE_BLOCK_SIZE = 16
 
 
 class Player(Entity):
@@ -11,21 +12,24 @@ class Player(Entity):
 
         self.state = "idle"
         self.face_direction = "right"
-        self.x = self.tiles[0]["position"][0][0]  # todo: consertar isso daqui
+        self.x = self.tiles[0]["position"][0][0]  # posição inicial
         self.y = self.tiles[0]["position"][0][1]
 
         self.width = self.tiles[0]["width"]
         self.height = self.tiles[0]["height"]
 
         self.velocity = 0.0
-        self.max_velocity = 10.0
+        self.max_velocity = 12.0
         self.acceleration = 0.4
-        self.deceleration = 0.4
+        self.deceleration = 0.8
 
         self.vertical_velocity = 0.0
-        self.jump_acceleration = -11.0
+        self.jump_acceleration = -10.0
         self.gravity = 12.8
         self.on_ground = True
+
+        self.jump_time_max = 0.2
+        self.jump_time_current = 0
 
     def parse(self, tile_data):
         for _t in tile_data:
@@ -40,6 +44,7 @@ class Player(Entity):
                 "position": _t.get("position", []).copy(),
                 "sprites": _t.get("sprites"),
             }
+            print(tile)
 
             self.tiles.append(tile)
 
@@ -57,27 +62,43 @@ class Player(Entity):
                 )
 
     def update(self, delta_time, input_handler, tiles):
-        self.update_state_and_velocity(input_handler)
+        self.update_state_and_velocity(input_handler, delta_time)
         self.update_position(delta_time, tiles)
         self.update_animation_frames(delta_time)
 
-    def update_state_and_velocity(self, input_handler):
-        if input_handler.is_pressed("up") and self.on_ground:
-            self.vertical_velocity = self.jump_acceleration
-            self.state = "jump"
-            self.on_ground = False
+    def update_state_and_velocity(self, input_handler, delta_time):
+        # Lógica de Salto
+        if self.state != "jump":
+            if input_handler.is_pressed("up") and self.on_ground:
+                self.state = "jump"
+                self.on_ground = False
+                self.vertical_velocity = self.jump_acceleration
+                self.jump_time_current = 0
 
-        if input_handler.is_pressed("left"):
+        if self.state == "jump":
+            if input_handler.is_pressed("up"):
+                self.jump_time_current += delta_time
+                if self.jump_time_current >= self.jump_time_max:
+                    self.state = "fall"
+            else:
+                self.state = "fall"
+
+        # Lógica de Movimento Horizontal
+        elif input_handler.is_pressed("left"):
             self.face_direction = "left"
-            self.state = "run"
+            self.state = "run" if self.on_ground else self.state
             self.velocity = max(-self.max_velocity, self.velocity - self.acceleration)
+
         elif input_handler.is_pressed("right"):
             self.face_direction = "right"
-            self.state = "run"
+            self.state = "run" if self.on_ground else self.state
             self.velocity = min(self.max_velocity, self.velocity + self.acceleration)
+
+        # Estado 'Idle'
         else:
-            self.state = "idle"
-            self.apply_deceleration()
+            if self.on_ground:
+                self.state = "idle"
+                self.apply_deceleration()
 
     def apply_deceleration(self):
         if self.velocity > 0:
@@ -88,6 +109,20 @@ class Player(Entity):
     def update_position(self, delta_time, tiles):
         new_x, new_y = self.calculate_new_positions(delta_time)
         new_x = self.handle_horizontal_collision(new_x, new_y, tiles)
+
+        # Atualiza a posição Y e a velocidade vertical
+        if self.state == "jump" and self.jump_time_current < self.jump_time_max:
+            additional_jump_force = (
+                -2 * (self.jump_time_max - self.jump_time_current) / self.jump_time_max
+            )
+            print(additional_jump_force)
+            self.vertical_velocity += additional_jump_force * self.gravity * delta_time
+        else:
+            additional_jump_force = 0
+            self.vertical_velocity += self.gravity * delta_time
+
+        new_y = self.y + self.vertical_velocity * delta_time
+
         new_y = self.handle_vertical_collision(new_x, new_y, tiles, delta_time)
 
         self.x = new_x
@@ -99,13 +134,18 @@ class Player(Entity):
         return new_x, new_y
 
     def handle_horizontal_collision(self, new_x, current_y, tiles):
-        player_rect = (new_x * 16, current_y * 16, self.width, self.height)
+        player_rect = (
+            new_x * SPRITE_BLOCK_SIZE,
+            current_y * SPRITE_BLOCK_SIZE,
+            self.width,
+            self.height,
+        )
         for tile in tiles:
             if "collidable" in tile and tile["collidable"]:
                 for position in tile["position"]:
                     tile_rect = (
-                        position[0] * 16,
-                        position[1] * 16,
+                        position[0] * SPRITE_BLOCK_SIZE,
+                        position[1] * SPRITE_BLOCK_SIZE,
                         tile["width"],
                         tile["height"],
                     )
@@ -115,13 +155,18 @@ class Player(Entity):
 
     def handle_vertical_collision(self, current_x, new_y, tiles, delta_time):
         self.on_ground = False
-        player_rect = (current_x * 16, new_y * 16, self.width, self.height)
+        player_rect = (
+            current_x * SPRITE_BLOCK_SIZE,
+            new_y * SPRITE_BLOCK_SIZE,
+            self.width,
+            self.height,
+        )
         for tile in tiles:
             if "collidable" in tile and tile["collidable"]:
                 for position in tile["position"]:
                     tile_rect = (
-                        position[0] * 16,
-                        position[1] * 16,
+                        position[0] * SPRITE_BLOCK_SIZE,
+                        position[1] * SPRITE_BLOCK_SIZE,
                         tile["width"],
                         tile["height"],
                     )
