@@ -3,10 +3,10 @@
 
 ## Features
 
+* Looped backgrounds
 * Loading levels and tilesets from Tiled Map Editor (unfinished)
 * Animations for sprites and tilesets (unfinished)
-* Basic collision detection (planned for future development)
-* Simple player movement (planned for future development)
-* Looped backgrounds (planned for future development)
-
+* Basic collision detection (unfinished)
+* Simple player movement (unfinished)
+ 
 I'm creating this engine for study purposes, and I welcome suggestions for improvement!
