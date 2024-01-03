@@ -3,6 +3,8 @@ import pygame
 
 class InputHandler:
     def __init__(self):
+        self.fullscreen_toggled = False
+
         self.key_map = {
             pygame.K_UP: "up",
             pygame.K_DOWN: "down",
@@ -22,35 +24,24 @@ class InputHandler:
                 pygame.quit()
                 quit()
 
-            elif event.type in (pygame.KEYDOWN, pygame.KEYUP):
+            elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
                     quit()
+                elif event.key == pygame.K_F11:
+                    self.fullscreen_toggled = True
 
                 key_action = self.key_map.get(event.key)
-
                 if key_action:
-                    self.key_state[key_action] = event.type == pygame.KEYDOWN
+                    self.key_state[key_action] = True
+
+            elif event.type == pygame.KEYUP:
+                key_action = self.key_map.get(event.key)
+                if key_action:
+                    self.key_state[key_action] = False
 
     def is_pressed(self, action):
         return self.key_state.get(action, False)
 
-
-"""
-pygame.init()
-input_handler = InputHandler()
-
-while True:
-    input_handler.update()
-
-    if input_handler.is_pressed("up"):
-        print("Moving Up!")
-    if input_handler.is_pressed("down"):
-        print("Moving Down!")
-    if input_handler.is_pressed("left"):
-        print("Moving Left!")
-    if input_handler.is_pressed("right"):
-        print("Moving Right!")
-    if input_handler.is_pressed("jump"):
-        print("Jumping!")
-"""
+    def reset_toggle_fullscreen(self):
+        self.fullscreen_toggled = False

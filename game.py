@@ -5,22 +5,37 @@ from asset_manager import AssetManager
 from player import Player
 from item import Item
 from platformer import Platform
-
 from background import Background
 
 
 class Game:
     def __init__(self, config_parser, width=800, height=600):
-        self.width = width
-        self.height = height
-        self.screen = None
-        self.background = None
         self.config_parser = config_parser
 
-    def load_screen(self, resizable=True):
-        flags = pygame.RESIZABLE if resizable else 0
-        self.screen = pygame.display.set_mode((self.width, self.height), flags)
+        resolution_str = self.config_parser.get(
+            "graphics", "resolution", fallback="1280x720"
+        )
+        self.width, self.height = map(int, resolution_str.split("x"))
+
+        # Ler o modo de tela cheia
+        fullscreen_str = self.config_parser.get("graphics", "fullscreen", fallback="no")
+        self.is_fullscreen = fullscreen_str.lower() == "yes"
+
+        self.screen = None
+        self.background = None
+
+    def load_screen(self):
+        if self.is_fullscreen:
+            self.screen = pygame.display.set_mode(
+                (self.width, self.height), pygame.FULLSCREEN
+            )
+        else:
+            flags = pygame.RESIZABLE
+            self.screen = pygame.display.set_mode((self.width, self.height), flags)
         return self.screen
+
+    def toggle_fullscreen(self):
+        self.is_fullscreen = not self.is_fullscreen
 
     def load_level(self, level_filename):
         self.tiled_level = pytmx.load_pygame(level_filename)

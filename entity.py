@@ -1,3 +1,6 @@
+import pygame
+
+
 class Entity:
     def __init__(self, tile_data):
         self.tiles = []
@@ -44,3 +47,6 @@ class Entity:
         x1, y1, w1, h1 = tuple(map(int, rect1))
         x2, y2, w2, h2 = tuple(map(int, rect2))
         return x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2
+
+    def get_pygame_rect(self):
+        return pygame.Rect(self.x, self.y, self.x + self.width, self.height)

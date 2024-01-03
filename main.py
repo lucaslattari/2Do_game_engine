@@ -20,7 +20,7 @@ pygame.font.init()
 
 config_parser = read_config_file("config.ini")
 
-game = Game(width=1280, height=720, config_parser=config_parser)
+game = Game(config_parser=config_parser)
 game.load_screen()
 game.screen.set_colorkey((0, 0, 0))  # define transparent
 
@@ -37,18 +37,13 @@ while running:
 
     input_handler.update()
 
-    """
-    if input_handler.is_pressed("up"):
-        print("Moving Up!")
-    if input_handler.is_pressed("down"):
-        print("Moving Down!")
-    if input_handler.is_pressed("left"):
-        print("Moving Left!")
-    if input_handler.is_pressed("right"):
-        print("Moving Right!")
-    if input_handler.is_pressed("jump"):
-        print("Jumping!")
-    """
+    if input_handler.fullscreen_toggled:
+        # Alternar entre tela cheia e modo janela
+        game.toggle_fullscreen()
+        game.load_screen()
+
+        # Resetar o estado de toggle após lidar com ele
+        input_handler.reset_toggle_fullscreen()
 
     game.update(delta_time, input_handler)
 

@@ -21,11 +21,11 @@ class Player(Entity):
         self.velocity = 0.0
         self.max_velocity = 12.0
         self.acceleration = 1.0
-        self.deceleration = 6.0
+        self.deceleration = 8.0
 
         self.vertical_velocity = 0.0
-        self.jump_acceleration = -10.0
-        self.gravity = 12.8
+        self.jump_acceleration = -12.0
+        self.gravity = 35
         self.on_ground = True
 
         self.jump_time_max = 0.2
@@ -109,13 +109,17 @@ class Player(Entity):
         new_x = self.handle_horizontal_collision(new_x, new_y, tiles)
 
         # Atualiza a posição Y e a velocidade vertical
-        if self.state == "jump" and self.jump_time_current < self.jump_time_max:
-            additional_jump_force = (
-                -2 * (self.jump_time_max - self.jump_time_current) / self.jump_time_max
-            )
-            self.vertical_velocity += additional_jump_force * self.gravity * delta_time
+        if self.state == "jump":
+            if self.jump_time_current < self.jump_time_max:
+                additional_jump_force = (
+                    -2
+                    * (self.jump_time_max - self.jump_time_current)
+                    / self.jump_time_max
+                )
+                self.vertical_velocity += (
+                    additional_jump_force * self.gravity * delta_time
+                )
         else:
-            additional_jump_force = 0
             self.vertical_velocity += self.gravity * delta_time
 
         new_y = self.y + self.vertical_velocity * delta_time
@@ -151,7 +155,6 @@ class Player(Entity):
         return new_x  # Otherwise, return new x position
 
     def handle_vertical_collision(self, current_x, new_y, tiles, delta_time):
-        self.on_ground = False
         player_rect = (
             current_x * SPRITE_BLOCK_SIZE,
             new_y * SPRITE_BLOCK_SIZE,
