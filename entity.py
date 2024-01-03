@@ -13,7 +13,8 @@ class Entity:
                 "height": t.get("height"),
                 "position": t.get("position", []).copy(),
                 "sprites": t.get("sprites"),
-                "collidable": t.get("collidable"),
+                "collidable_horizontal": t.get("collidable_horizontal"),
+                "collidable_vertical": t.get("collidable_vertical"),
             }
 
             self.tiles.append(tile)

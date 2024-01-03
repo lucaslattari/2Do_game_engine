@@ -20,8 +20,8 @@ class Player(Entity):
 
         self.velocity = 0.0
         self.max_velocity = 12.0
-        self.acceleration = 0.4
-        self.deceleration = 0.8
+        self.acceleration = 1.0
+        self.deceleration = 6.0
 
         self.vertical_velocity = 0.0
         self.jump_acceleration = -10.0
@@ -44,8 +44,6 @@ class Player(Entity):
                 "position": _t.get("position", []).copy(),
                 "sprites": _t.get("sprites"),
             }
-            print(tile)
-
             self.tiles.append(tile)
 
     def render(self, screen, block_size):
@@ -115,7 +113,6 @@ class Player(Entity):
             additional_jump_force = (
                 -2 * (self.jump_time_max - self.jump_time_current) / self.jump_time_max
             )
-            print(additional_jump_force)
             self.vertical_velocity += additional_jump_force * self.gravity * delta_time
         else:
             additional_jump_force = 0
@@ -141,7 +138,7 @@ class Player(Entity):
             self.height,
         )
         for tile in tiles:
-            if "collidable" in tile and tile["collidable"]:
+            if "collidable_horizontal" in tile and tile["collidable_horizontal"]:
                 for position in tile["position"]:
                     tile_rect = (
                         position[0] * SPRITE_BLOCK_SIZE,
@@ -162,7 +159,7 @@ class Player(Entity):
             self.height,
         )
         for tile in tiles:
-            if "collidable" in tile and tile["collidable"]:
+            if "collidable_vertical" in tile and tile["collidable_vertical"]:
                 for position in tile["position"]:
                     tile_rect = (
                         position[0] * SPRITE_BLOCK_SIZE,
@@ -171,9 +168,26 @@ class Player(Entity):
                         tile["height"],
                     )
                     if self.check_collision(player_rect, tile_rect):
-                        self.on_ground = True
-                        self.vertical_velocity = 0
-                        return self.y  # Reset y position if collision detected
+                        player_top = round(self.y) * SPRITE_BLOCK_SIZE
+                        player_bottom = (
+                            round(self.y) * SPRITE_BLOCK_SIZE + SPRITE_BLOCK_SIZE * 2
+                        )
+
+                        tile_top = tile_rect[1]
+                        tile_bottom = tile_rect[1] + tile_rect[3]
+
+                        # Colidindo "por cima"
+                        if self.vertical_velocity > 0:
+                            # Plataforma está abaixo do pé do personagem?
+                            if player_bottom <= tile_top:
+                                self.on_ground = True
+                                self.vertical_velocity = 0
+                                return round(self.y)
+                            else:
+                                pass
+                        # Colidindo "por baixo"
+                        else:
+                            pass
 
         if not self.on_ground:
             self.vertical_velocity += self.gravity * delta_time
