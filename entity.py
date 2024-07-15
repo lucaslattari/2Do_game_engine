@@ -18,6 +18,7 @@ class Entity:
                 "sprites": t.get("sprites"),
                 "collidable_horizontal": t.get("collidable_horizontal"),
                 "collidable_vertical": t.get("collidable_vertical"),
+                "can_descend": t.get("can_descend"),
             }
 
             self.tiles.append(tile)

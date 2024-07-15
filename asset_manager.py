@@ -24,11 +24,13 @@ class AssetManager:
                 tile = level.get_tile_properties_by_gid(gid)
                 if not tile:
                     continue
+
                 tile["gid"] = gid
 
                 # Verificar a propriedade 'collidable'
                 tile["collidable_horizontal"] = tile.get("collidable_horizontal", False)
                 tile["collidable_vertical"] = tile.get("collidable_vertical", False)
+                tile["can_descend"] = tile.get("can_descend", False)
 
                 self.update_tiles(tile, tiles, gid_to_position.get(gid), level)
 
