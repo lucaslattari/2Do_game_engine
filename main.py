@@ -1,12 +1,10 @@
 # main.py
 import pygame
-import random
-import time
 import logging
 
 from game import Game
 from input_handler import InputHandler
-from utils import *
+from utils import render_fps, read_config_file
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(
@@ -22,28 +20,26 @@ config_parser = read_config_file("config.ini")
 
 game = Game(config_parser=config_parser)
 game.load_screen()
-game.screen.set_colorkey((0, 0, 0))  # define transparent
+game.screen.set_colorkey((0, 0, 0))  # define transparente
 
 game.load_level("maps/level1.tmx")
 logger.info("Nível carregado")
 
-input_handler = InputHandler()
+input_handler = InputHandler(config_parser)
 
 clock = pygame.time.Clock()
 running = True
 
+# Carrega a fonte uma vez para uso no render_fps
+font = pygame.font.Font(None, 30)
+
 while running:
-    delta_time = clock.tick(60) / 1000  # tempo decorrido desde o último frame
+    delta_time = clock.tick(60) / 1000.0  # tempo em segundos desde o último frame
 
-    input_handler.update()
+    input_handler.process_events()
 
-    if input_handler.fullscreen_toggled:
-        # Alternar entre tela cheia e modo janela
-        game.toggle_fullscreen()
-        game.load_screen()
-
-        # Resetar o estado de toggle após lidar com ele
-        input_handler.reset_toggle_fullscreen()
+    if input_handler.quit_game:
+        running = False
 
     game.update(delta_time, input_handler)
 
@@ -54,7 +50,7 @@ while running:
     game.render(game.screen)
 
     # Render the FPS on the screen
-    render_fps(clock.get_fps(), game.screen)
+    render_fps(clock.get_fps(), game.screen, font)
 
     pygame.display.update()
 

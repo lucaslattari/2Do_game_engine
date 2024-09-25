@@ -1,6 +1,8 @@
-import pygame, pytmx, configparser
+import pygame
+import pytmx
+import configparser
 
-# assets
+# Importações dos módulos atualizados
 from asset_manager import AssetManager
 from player import Player
 from item import Item
@@ -24,6 +26,9 @@ class Game:
         self.screen = None
         self.background = None
 
+        # Variável para controlar se a tela precisa ser atualizada
+        self.screen_needs_update = True
+
     def load_screen(self):
         if self.is_fullscreen:
             self.screen = pygame.display.set_mode(
@@ -36,12 +41,15 @@ class Game:
 
     def toggle_fullscreen(self):
         self.is_fullscreen = not self.is_fullscreen
+        self.load_screen()  # Atualiza a tela ao alternar o modo
 
     def load_level(self, level_filename):
-        self.tiled_level = pytmx.load_pygame(level_filename)
-        self.load_assets()
-
-        self.background = Background(self.tiled_level, self.config_parser)
+        try:
+            self.tiled_level = pytmx.load_pygame(level_filename)
+            self.load_assets()
+            self.background = Background(self.tiled_level, self.config_parser)
+        except Exception as e:
+            print(f"Erro ao carregar o nível: {e}")
 
     def load_assets(self):
         self.asset_manager = AssetManager(self.tiled_level)
@@ -54,6 +62,10 @@ class Game:
         return self.tiled_level.tilewidth, self.tiled_level.tileheight
 
     def update(self, delta_time, input_handler):
+        if input_handler.fullscreen_toggled:
+            self.toggle_fullscreen()
+            input_handler.reset_toggle_fullscreen()
+
         if self.background:
             self.background.update(delta_time)
 

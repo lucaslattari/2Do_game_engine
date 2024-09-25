@@ -1,6 +1,6 @@
 import pygame
 
-from entity import Entity
+from entity import Entity, Tile
 
 ANIMATION_TYPES = ["run", "idle", "jump"]
 SPRITE_BLOCK_SIZE = 16
@@ -16,11 +16,11 @@ class Player(Entity):
 
         self.state = "idle"
         self.face_direction = "right"
-        self.x = self.tiles[0]["position"][0][0]  # posição inicial
-        self.y = self.tiles[0]["position"][0][1]
+        self.x = self.tiles[0].position[0][0]  # posição inicial
+        self.y = self.tiles[0].position[0][1]
 
-        self.width = self.tiles[0]["width"]
-        self.height = self.tiles[0]["height"]
+        self.width = self.tiles[0].width
+        self.height = self.tiles[0].height
 
         self.velocity = 0.0
         self.max_velocity = 12.0
@@ -38,28 +38,24 @@ class Player(Entity):
         self.descend_time_max = 0.12
         self.descend_time_current = 0
 
+        self.animation_frame_durations = {
+            "idle": 0.03,  # Duração de quadro para a animação 'idle' (parado)
+            "run": 0.03,  # Duração de quadro para a animação 'run' (correndo)
+            "jump": 0.1,  # Duração de quadro para a animação 'jump' (pulando)
+            # Adicione outras animações se necessário
+        }
+
     def parse(self, tile_data):
         for _t in tile_data:
             animation_name = _t["type"].split("_")[1].lower()
-            tile = {
-                "animation_name": animation_name,  # Nome da animação (ex: "run", "idle", "jump")
-                "current_frame": 0,  # Quadro atual da animação
-                "timer_next_frame": 0.0,  # Temporizador para controlar a mudança de quadros da animação
-                "id": _t.get("id"),  # ID do tile (se disponível nos dados originais)
-                "width": _t.get("width"),  # Largura do tile
-                "height": _t.get("height"),  # Altura do tile
-                "position": _t.get(
-                    "position", []
-                ).copy(),  # Posições do tile (cópia da lista de posições para evitar modificar os dados originais)
-                "sprites": _t.get("sprites"),
-                "can_descend": _t.get("can_descend", False),  # Novo atributo
-            }
+            tile = Tile(_t)
+            tile.animation_name = animation_name
             self.tiles.append(tile)
 
     def render(self, screen, block_size):
         for tile in self.tiles:
-            if self.state == tile["animation_name"]:
-                sprite_to_draw = tile["sprites"][tile["current_frame"]]
+            if self.state == tile.animation_name:
+                sprite_to_draw = tile.sprites[tile.current_frame]
 
                 if self.face_direction == "left":
                     sprite_to_draw = pygame.transform.flip(sprite_to_draw, True, False)
@@ -78,20 +74,20 @@ class Player(Entity):
         # Estado atual do personagem
         state = self.state
 
-        # Atualiza a lógica de descida
+        # Lógica de descida
         if (
             input_handler.is_pressed("down")
             and self.on_ground
             and (state == "idle" or state == "run")
         ):
             for tile in tiles:
-                if "can_descend" in tile and tile["can_descend"]:
-                    for position in tile["position"]:
+                if tile.can_descend:
+                    for position in tile.position:
                         tile_rect = (
                             position[0] * SPRITE_BLOCK_SIZE,
                             position[1] * SPRITE_BLOCK_SIZE,
-                            tile["width"],
-                            tile["height"],
+                            tile.width,
+                            tile.height,
                         )
                         player_rect = (
                             self.x * SPRITE_BLOCK_SIZE,
@@ -156,13 +152,13 @@ class Player(Entity):
             self.height,
         )
         for tile in tiles:
-            if "collidable_vertical" in tile and tile["collidable_vertical"]:
-                for position in tile["position"]:
+            if tile.collidable_vertical:
+                for position in tile.position:
                     tile_rect = (
                         position[0] * SPRITE_BLOCK_SIZE,
                         position[1] * SPRITE_BLOCK_SIZE,
-                        tile["width"],
-                        tile["height"],
+                        tile.width,
+                        tile.height,
                     )
                     if self.check_collision(player_rect, tile_rect):
                         player_top = round(self.y) * SPRITE_BLOCK_SIZE
@@ -197,7 +193,7 @@ class Player(Entity):
 
     def update_position(self, delta_time, tiles):
         new_x, new_y = self.calculate_new_positions(delta_time)
-        new_x = self.handle_horizontal_collision(new_x, self.y, tiles)  # Correção aqui
+        new_x = self.handle_horizontal_collision(new_x, self.y, tiles)
 
         # Atualiza a posição Y e a velocidade vertical
         if self.state == "jump":
@@ -239,13 +235,13 @@ class Player(Entity):
             self.height,
         )
         for tile in tiles:
-            if "collidable_horizontal" in tile and tile["collidable_horizontal"]:
-                for position in tile["position"]:
+            if tile.collidable_horizontal:
+                for position in tile.position:
                     tile_rect = (
                         position[0] * SPRITE_BLOCK_SIZE,
                         position[1] * SPRITE_BLOCK_SIZE,
-                        tile["width"],
-                        tile["height"],
+                        tile.width,
+                        tile.height,
                     )
                     if self.check_collision(player_rect, tile_rect):
                         return self.x  # Reset x position if collision detected
@@ -253,13 +249,9 @@ class Player(Entity):
 
     def update_animation_frames(self, delta_time):
         for tile in self.tiles:
-            if tile["timer_next_frame"] > delta_time:
-                tile["current_frame"] = (tile["current_frame"] + 1) % len(
-                    tile["sprites"]
-                )
-                tile["timer_next_frame"] -= delta_time
-            else:
-                tile["timer_next_frame"] += delta_time
+            if self.state == tile.animation_name:
+                frame_duration = self.animation_frame_durations.get(self.state, 0.1)
+                tile.update(delta_time, frame_duration)
 
     def check_collision(self, rect1, rect2):
         return pygame.Rect(rect1).colliderect(pygame.Rect(rect2))
