@@ -1,0 +1,15 @@
+site_name: "Documentação - 2Do"
+theme:
+    name: "material"
+nav:
+    - "Introdução": index.md
+    - "Configuração e Setup": configuracao.md
+    - "Estrutura Geral do Projeto": estrutura_projeto.md
+    - "Sistema de Gerenciamento de Recursos": assets.md
+    - "Entidades e Objetos do Jogo": entidades.md
+    - "Sistema de Entrada e Controle": controle.md
+    - "Lógica de Jogo e Jogador": logica_jogo.md
+    - "Plano de Fundo e Interface": plano_fundo.md
+    - "Utilitários e Configuração Adicional": utils.md
+    - "Arquivo Principal e Execução": executando.md
+    - "Referências e Recursos Adicionais": referencias.md
