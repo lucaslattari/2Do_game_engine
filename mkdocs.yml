@@ -2,14 +2,14 @@ site_name: "Documentação - 2Do"
 theme:
     name: "material"
 nav:
-    - "Introdução": index.md
-    - "Configuração e Setup": configuracao.md
-    - "Estrutura Geral do Projeto": estrutura_projeto.md
-    - "Sistema de Gerenciamento de Recursos": assets.md
-    - "Entidades e Objetos do Jogo": entidades.md
-    - "Sistema de Entrada e Controle": controle.md
-    - "Lógica de Jogo e Jogador": logica_jogo.md
-    - "Plano de Fundo e Interface": plano_fundo.md
-    - "Utilitários e Configuração Adicional": utils.md
-    - "Arquivo Principal e Execução": executando.md
-    - "Referências e Recursos Adicionais": referencias.md
+    - "Introdução": docs/index.md
+    - "Configuração e Setup": docs/configuracao.md
+    - "Estrutura Geral do Projeto": docs/estrutura_projeto.md
+    - "Sistema de Gerenciamento de Recursos": docs/assets.md
+    - "Entidades e Objetos do Jogo": docs/entidades.md
+    - "Sistema de Entrada e Controle": docs/controle.md
+    - "Lógica de Jogo e Jogador": docs/logica_jogo.md
+    - "Plano de Fundo e Interface": docs/plano_fundo.md
+    - "Utilitários e Configuração Adicional": docs/utils.md
+    - "Arquivo Principal e Execução": docs/executando.md
+    - "Referências e Recursos Adicionais": docs/referencias.md
