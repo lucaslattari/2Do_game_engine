@@ -5,7 +5,6 @@
 *.tmx
 
 maps/
-docs/
 graphics/
 __pycache__/
 venv_pythongame/
