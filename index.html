@@ -307,15 +307,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#demonstracao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Demonstração
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -664,15 +655,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#demonstracao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Demonstração
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -730,32 +712,70 @@
 
 
 <h1 id="2do-motor-de-jogos-2d">2Do - Motor de Jogos 2D</h1>
+<hr />
 <h2 id="visao-geral">Visão Geral</h2>
-<p>O 2Do é um motor gráfico (engine) para desenvolvimento de jogos de plataforma 2D, escrito em Python e criado por Lucas Lattari para fins educacionais. Projetado com foco em simplicidade e extensibilidade, o 2Do oferece uma abordagem modular e intuitiva para a criação de jogos de plataforma.</p>
-<p>O framework foi desenvolvido com ênfase em boas práticas de programação e arquitetura limpa, tornando-o ideal tanto para iniciantes que desejam aprender sobre desenvolvimento de jogos quanto para desenvolvedores que buscam uma base sólida para seus projetos. Com suporte nativo a recursos essenciais como animações baseadas em sprites, sistema de física para plataformas, e integração com o formato TMX do Tiled Map Editor, o 2Do simplifica o processo de criação de jogos 2D mantendo a flexibilidade para personalização.</p>
+<p>O <strong>2Do</strong> é um motor gráfico (engine) para desenvolvimento de jogos de plataforma 2D, escrito em <strong>Python</strong> e criado por <strong>Lucas Lattari</strong> para fins educacionais. Projetado com foco em <strong>simplicidade</strong> e <strong>extensibilidade</strong>, o 2Do oferece uma abordagem modular e intuitiva para a criação de jogos de plataforma.</p>
+<p>O framework está sendo desenvolvido com ênfase em <strong>boas práticas de programação</strong> e <strong>arquitetura limpa</strong>, tornando-o ideal tanto para iniciantes que desejam aprender sobre desenvolvimento de jogos quanto para desenvolvedores experientes que buscam uma base sólida para seus projetos. Com suporte nativo a recursos como <strong>animações baseadas em sprites</strong>, <strong>sistema de física para plataformas</strong> e <strong>integração com o formato TMX do Tiled Map Editor</strong>, o 2Do almeja simplificar o processo de criação de jogos 2D, mantendo a flexibilidade para personalização.</p>
+<hr />
 <h2 id="arquitetura">Arquitetura</h2>
-<p>O 2Do segue uma arquitetura modular com componentes bem definidos:</p>
+<p>O 2Do segue uma <strong>arquitetura modular</strong> com componentes bem definidos:</p>
 <ul>
-<li><strong>Asset Manager</strong>: Centraliza o carregamento e gerenciamento de recursos do jogo.</li>
-<li><strong>Entity System</strong>: Fornece a base para todos os objetos do jogo.</li>
-<li><strong>Input Handler</strong>: Gerencia a entrada do usuário de forma configurável.</li>
-<li><strong>Physics System</strong>: Implementa colisões e movimentação para jogos de plataforma.</li>
-<li><strong>Background Manager</strong>: Controla elementos de plano de fundo e parallax.</li>
-<li><strong>Configuration System</strong>: Permite personalização via arquivos .ini.</li>
+<li><strong>Asset Manager</strong>: Centraliza o carregamento e gerenciamento de recursos do jogo, como sprites, tiles e mapas.</li>
+<li><strong>Entity System</strong>: Fornece a base para todos os objetos do jogo, como personagens, itens e plataformas.</li>
+<li><strong>Input Handler</strong>: Gerencia a entrada do usuário de forma configurável, permitindo mapear teclas para ações específicas.</li>
+<li><strong>Physics System</strong>: Implementa colisões e movimentação para jogos de plataforma, incluindo gravidade e detecção de colisões.</li>
+<li><strong>Background Manager</strong>: Controla elementos de plano de fundo, como rolagem em paralaxe e camadas de fundo.</li>
+<li><strong>Configuration System</strong>: Permite personalização do jogo via arquivos <code>.ini</code>, como resolução, volume de áudio e controles.</li>
 </ul>
+<hr />
 <h2 id="funcionalidades-principais">Funcionalidades Principais</h2>
 <ul>
-<li><strong>Sistema de Física para Jogos de Plataforma:</strong> Implementa gravidade, colisões e movimentação dos personagens.</li>
-<li><strong>Gerenciamento de Assets Baseado em Tiles:</strong> Organiza e carrega recursos gráficos usando mapas no formato TMX.</li>
-<li><strong>Sistema de Animação por Sprites:</strong> Suporta animações fluidas para personagens e objetos.</li>
-<li><strong>Colisões Precisas:</strong> Detecta e gerencia colisões entre diferentes entidades do jogo.</li>
-<li><strong>Suporte a Plataformas Atravessáveis:</strong> Permite que os personagens passem através de certas plataformas.</li>
-<li><strong>Parallax Scrolling para Planos de Fundo:</strong> Cria uma sensação de profundidade movendo camadas de fundo a diferentes velocidades.</li>
-<li><strong>Sistema de Configuração Flexível:</strong> Permite personalizar configurações de jogo através de arquivos <code>.ini</code>.</li>
-<li><strong>Controles Personalizáveis:</strong> Mapeia entradas de teclado conforme a preferência do usuário.</li>
-<li><strong>Suporte a Tela Cheia:</strong> Alterna entre modos de tela cheia e janela.</li>
-<li><strong>Sistema de Logging Integrado:</strong> Facilita o rastreamento e depuração durante o desenvolvimento.</li>
+<li><strong>Sistema de Física para Jogos de Plataforma</strong>:</li>
+<li>Implementa <strong>gravidade</strong>, <strong>colisões</strong> e <strong>movimentação</strong> dos personagens.</li>
+<li>Suporta <strong>plataformas atravessáveis</strong>, permitindo que o jogador passe por certas plataformas ao pular ou cair.</li>
 </ul>
+<hr />
+<ul>
+<li><strong>Gerenciamento de Assets Baseado em Tiles</strong>:</li>
+<li>Organiza e carrega recursos gráficos usando mapas no formato <strong>TMX</strong> (Tiled Map Editor).</li>
+<li>Facilita a criação de níveis com tilesets e camadas.</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Sistema de Animação por Sprites</strong>:</li>
+<li>Suporta animações fluidas para personagens e objetos, com controle de frames e durações.</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Colisões Precisas</strong>:</li>
+<li>Detecta e gerencia colisões entre diferentes entidades do jogo, como personagens, plataformas e itens.</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Parallax Scrolling para Planos de Fundo</strong>:</li>
+<li>Cria uma sensação de profundidade movendo camadas de fundo a diferentes velocidades.</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Sistema de Configuração Flexível</strong>:</li>
+<li>Permite personalizar configurações de jogo através de arquivos <code>.ini</code>, como resolução, volume de áudio e controles.</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Controles Personalizáveis</strong>:</li>
+<li>Mapeia entradas de teclado conforme a preferência do usuário, com suporte a teclas configuráveis.</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Suporte a Tela Cheia</strong>:</li>
+<li>Alterna entre modos de tela cheia e janela com um simples comando.</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Sistema de Logging Integrado</strong>:</li>
+<li>Facilita o rastreamento e depuração durante o desenvolvimento, com logs detalhados.</li>
+</ul>
+<hr />
 <h2 id="tecnologias-utilizadas">Tecnologias Utilizadas</h2>
 <p>O 2Do é construído utilizando as seguintes tecnologias:</p>
 <ul>
@@ -764,69 +784,74 @@
 <li><strong><a href="https://github.com/bitcraft/PyTMX">PyTMX</a></strong>: Biblioteca para carregamento e manipulação de mapas no formato TMX, criado pelo Tiled Map Editor.</li>
 <li><strong><a href="https://docs.python.org/3/library/configparser.html">ConfigParser</a></strong>: Módulo para leitura e gerenciamento de arquivos de configuração <code>.ini</code>.</li>
 </ul>
+<hr />
 <h2 id="requisitos-do-sistema">Requisitos do Sistema</h2>
 <p>Para executar o 2Do, você precisará:</p>
 <ol>
-<li>Python 3.x instalado</li>
-<li>Dependências listadas em <code>requirements.txt</code>:</li>
-<li>pygame==2.3.0</li>
-<li>PyTMX==3.31</li>
-<li>autopep8==2.0.2</li>
-<li>pycodestyle==2.10.0</li>
-<li>tomli==2.0.1</li>
+<li><strong>Python 3.x</strong> instalado.</li>
+<li><strong>Dependências</strong> listadas em <code>requirements.txt</code>:
+   <code>plaintext
+   pygame==2.3.0
+   PyTMX==3.31
+   autopep8==2.0.2
+   pycodestyle==2.10.0
+   tomli==2.0.1</code></li>
 </ol>
+<hr />
 <h2 id="comecando">Começando</h2>
 <h3 id="instalacao">Instalação</h3>
 <ol>
-<li>Clone o repositório:</li>
+<li>
+<p>Clone o repositório:
+   <code>bash
+   git clone [URL_DO_REPOSITORIO]</code></p>
+</li>
+<li>
+<p>Instale as dependências:
+   <code>bash
+   pip install -r requirements.txt</code></p>
+</li>
 </ol>
-<pre><code class="language-bash">git clone [URL_DO_REPOSITORIO]
-</code></pre>
-<ol>
-<li>Instale as dependências:</li>
-</ol>
-<pre><code class="language-bash">pip install -r requirements.txt
-</code></pre>
+<hr />
 <h3 id="executando-o-projeto">Executando o Projeto</h3>
 <ol>
 <li>
-<p>Navegue até o diretório do projeto</p>
+<p>Navegue até o diretório do projeto:
+   <code>bash
+   cd 2Do</code></p>
 </li>
 <li>
-<p>Execute o arquivo principal: python main.py</p>
+<p>Execute o arquivo principal:
+   <code>bash
+   python main.py</code></p>
 </li>
 </ol>
-<h3 id="demonstracao">Demonstração</h3>
-<p>A demonstração mostra o motor em ação, apresentando:</p>
-<ul>
-<li>Movimentação fluida do personagem</li>
-<li>Sistema de colisões</li>
-<li>Plataformas atravessáveis</li>
-<li>Animações suaves</li>
-<li>Parallax scrolling do plano de fundo</li>
-</ul>
+<hr />
 <h2 id="proximos-passos">Próximos Passos</h2>
 <p>Para começar a desenvolver com o 2Do, recomenda-se seguir esta documentação na ordem:</p>
 <ol>
-<li>Configuração e Setup</li>
-<li>Estrutura Geral do Projeto</li>
-<li>Sistema de Gerenciamento de Recursos</li>
-<li>Entidades e Objetos do Jogo</li>
+<li><strong>Configuração e Setup</strong>: Como configurar o ambiente de desenvolvimento.</li>
+<li><strong>Estrutura Geral do Projeto</strong>: Entenda a organização dos arquivos e diretórios.</li>
+<li><strong>Sistema de Gerenciamento de Recursos</strong>: Aprenda a carregar e gerenciar assets.</li>
+<li><strong>Entidades e Objetos do Jogo</strong>: Como criar e manipular personagens, itens e plataformas.</li>
 </ol>
+<hr />
 <h2 id="contribuicoes">Contribuições</h2>
 <p>Contribuições são bem-vindas! Por favor, sinta-se à vontade para:</p>
 <ul>
-<li>Abrir uma issue para reportar bugs</li>
-<li>Propor novas funcionalidades</li>
-<li>Enviar pull requests</li>
-<li>Melhorar a documentação</li>
+<li><strong>Abrir uma issue</strong> para reportar bugs.</li>
+<li><strong>Propor novas funcionalidades</strong>.</li>
+<li><strong>Enviar pull requests</strong>.</li>
+<li><strong>Melhorar a documentação</strong>.</li>
 </ul>
+<hr />
 <h2 id="contato">Contato</h2>
 <p><strong>Lucas Lattari</strong><br />
 📧 Email: <a href="mailto:lucas.lattari@ifsudestemg.edu.br">lucas.lattari@ifsudestemg.edu.br</a><br />
 🐱 GitHub: <a href="https://github.com/lucaslattari">@lucaslattari</a></p>
+<hr />
 <h2 id="agradecimentos">Agradecimentos</h2>
-<p>Agradecimentos especiais a todos que contribuíram com o projeto, seja através de código, sugestões ou reportando problemas. Um agradecimento especial ao time de desenvolvimento do Pygame e PyTMX por fornecerem ferramentas que tornaram este projeto possível.</p>
+<p>Agradecimentos especiais a todos que contribuíram com o projeto, seja através de código, sugestões ou reportando problemas. Um agradecimento especial ao time de desenvolvimento do <strong>Pygame</strong> e <strong>PyTMX</strong> por fornecerem ferramentas que tornaram este projeto possível.</p>
 
 
 
