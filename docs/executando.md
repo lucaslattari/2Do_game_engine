@@ -1,165 +1,107 @@
-# Configuração e Setup do 2Do
+# Executando o 2Do
 
-Esta seção explica como configurar e preparar o ambiente para o framework 2Do, um motor simples para jogos de plataforma 2D desenvolvido em Python usando Pygame.
+Este guia explica como configurar o ambiente de desenvolvimento, executar o jogo e entender o fluxo básico de funcionamento do 2Do.
 
-## Requisitos de Sistema
+## Pré-requisitos
 
-Para executar o 2Do, você precisará de:
+Antes de executar o 2Do, certifique-se de que seu sistema atende aos seguintes requisitos:
 
-- **Python 3.8 ou superior** - [Download Python](https://www.python.org/downloads/)
-- **Pygame 2.3.0** - Instalado automaticamente com as dependências
-- **PyTMX 3.31** - Instalado automaticamente com as dependências
+- **Python 3.8 ou superior**: [Download Python](https://www.python.org/downloads/)
+- **Git**: [Download Git](https://git-scm.com/downloads)
+- **Dependências do Projeto**: Instale as bibliotecas necessárias listadas no arquivo `requirements.txt`.
 
-## Instalação
+## Configurando o Ambiente
 
-### 1. Obtendo o Código
+### 1. Clonar o Repositório
 
-Clone o repositório ou baixe os arquivos do projeto para o seu computador.
-
-```bash
-git clone https://github.com/seu-usuario/2do.git
-cd 2do
-```
-
-### 2. Configurando o Ambiente Virtual (Recomendado)
-
-É recomendável usar um ambiente virtual para manter as dependências isoladas:
+Para começar, clone o repositório do 2Do para o seu ambiente local:
 
 ```bash
-python -m venv venv
+git clone https://github.com/seu-usuario/2Do.git
+cd 2Do
 ```
 
-Ativando o ambiente virtual:
+### 2. Instalar Dependências
 
-**Windows**:
-```bash
-venv\Scripts\activate
-```
-
-**macOS/Linux**:
-```bash
-source venv/bin/activate
-```
-
-### 3. Instalando Dependências
-
-Todas as dependências necessárias estão listadas no arquivo `requirements.txt`:
+Instale as dependências do projeto usando o `pip`:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Arquivo de Configuração (config.ini)
+Isso garantirá que todas as bibliotecas necessárias, como Pygame e PyTMX, estejam instaladas.
 
-O 2Do utiliza um arquivo de configuração no formato INI para personalizar diversos aspectos do jogo. Este arquivo é lido pelo `configparser` do Python e aplicado ao iniciar o jogo.
+## Executando o Jogo
 
-### Estrutura do Arquivo
+### 1. Iniciar o Jogo
 
-O arquivo `config.ini` padrão contém as seguintes seções:
+Para executar o jogo, navegue até o diretório do projeto e execute o arquivo `main.py`:
 
-```ini
-[graphics]
-resolution = 1280x720
-fullscreen = no
-
-[audio]
-volume = 80
-
-[background]
-image = graphics/Background/Brown.png
-x_block_bounds = 12,62
-y_block_bounds = 10,37
-scroll_speed = 0.6
+```bash
+python main.py
 ```
 
-### Configurações Detalhadas
+Isso iniciará o jogo e exibirá a tela inicial.
 
-#### Gráficos
+### 2. Controles do Jogo
 
-Na seção `[graphics]`, você pode configurar:
+O jogo utiliza os seguintes controles padrão:
 
-- **resolution**: Define a resolução da janela do jogo no formato `LARGURAxALTURA`
-- **fullscreen**: Ativa (`yes`) ou desativa (`no`) o modo de tela cheia
+- **Movimentação**:
+  - **Setas direcionais** ou **WASD**: Movimentar o personagem.
+  - **Espaço**: Pular.
+- **Tela Cheia**:
+  - **F11**: Alternar entre tela cheia e modo janela.
+- **Sair do Jogo**:
+  - **ESC**: Fechar o jogo.
 
-O código em `game.py` aplica essas configurações durante a inicialização:
+### 3. Configurações Personalizadas
 
-```python
-resolution_str = self.config_parser.get("graphics", "resolution", fallback="1280x720")
-self.width, self.height = map(int, resolution_str.split("x"))
+Você pode personalizar os controles e outras configurações editando o arquivo `config.ini`. Para mais detalhes, consulte o guia [Configuração do Jogo](configuracao.md).
+
+## Fluxo de Execução
+
+O fluxo básico de execução do 2Do é o seguinte:
+
+1. **Inicialização**:
+   - O jogo carrega o arquivo de configuração (`config.ini`) e inicializa o Pygame.
+   - O `AssetManager` carrega os recursos do jogo, como sprites, tiles e mapas.
+
+2. **Carregamento do Nível**:
+   - O jogo carrega o nível a partir de um arquivo TMX (gerado pelo Tiled Map Editor).
+   - As entidades do jogo (player, itens, plataformas) são inicializadas.
+
+3. **Loop Principal**:
+   - O `InputHandler` processa a entrada do usuário.
+   - O `Game` atualiza o estado do jogo (física, colisões, animações).
+   - O `Background` atualiza e renderiza o plano de fundo.
+   - Todas as entidades são renderizadas na tela.
+
+4. **Finalização**:
+   - Quando o jogo é encerrado, o Pygame é finalizado e os recursos são liberados.
+
+## Solução de Problemas
+
+### 1. Erro ao Executar o Jogo
+
+Se o jogo não iniciar, verifique se todas as dependências foram instaladas corretamente. Execute o seguinte comando para garantir:
+
+```bash
+pip install -r requirements.txt
 ```
 
-#### Áudio
+### 2. Problemas com Assets
 
-Na seção `[audio]`, você pode configurar:
+Se os assets (sprites, tiles, etc.) não forem carregados corretamente, verifique se os caminhos no arquivo `config.ini` estão corretos e se os arquivos existem no diretório especificado.
 
-- **volume**: Define o volume global do jogo (0-100)
+### 3. Erros de Renderização
 
-#### Plano de Fundo
-
-Na seção `[background]`, você pode personalizar o fundo do jogo:
-
-- **image**: Caminho para a imagem de fundo (relativo à raiz do projeto)
-- **x_block_bounds**: Limites horizontais para repetição do plano de fundo (formato `min,max`)
-- **y_block_bounds**: Limites verticais para repetição do plano de fundo (formato `min,max`)
-- **scroll_speed**: Velocidade de rolagem do plano de fundo (valores maiores = movimento mais rápido)
-
-##### Entendendo os Limites de Blocos
-
-No 2Do, o plano de fundo é construído repetindo (ou "tilando") uma imagem base. Os parâmetros `x_block_bounds` e `y_block_bounds` definem quantos blocos serão usados para criar esse fundo:
-
-- Se um bloco tem 16x16 pixels e você define `x_block_bounds = 12,62`, o plano de fundo terá 50 blocos de largura (62-12)
-- Com `y_block_bounds = 10,37`, o plano de fundo terá 27 blocos de altura (37-10)
-
-Esses valores são utilizados na classe `Background` para criar um fundo contínuo que cobre toda a área visível do jogo:
-
-```python
-bg_width = (self.x_block_bounds[1] - self.x_block_bounds[0]) * self.tile_bg.get_width()
-bg_height = (self.y_block_bounds[1] - self.y_block_bounds[0]) * self.tile_bg.get_height()
-```
-
-## Sistema de Controle
-
-Embora não exista uma seção `[controls]` no arquivo de configuração padrão, o código do 2Do está preparado para ler controles personalizados caso você adicione essa seção. 
-
-### Controles Padrão
-
-Os controles padrão, definidos em `input_handler.py`, são:
-
-- **Setas direcionais (↑, ↓, ←, →)**: Movimentação básica
-- **W, A, S, D**: Controles alternativos para movimentação
-- **Barra de Espaço**: Pular
-
-Além disso, existem teclas globais do sistema:
-- **ESC**: Sai do jogo
-- **F11**: Alterna entre tela cheia e modo janela
-
-### Personalizando Controles
-
-Para personalizar os controles, você pode adicionar uma seção `[controls]` ao arquivo `config.ini`:
-
-```ini
-[controls]
-up = K_UP
-down = K_DOWN
-left = K_LEFT
-right = K_RIGHT
-jump = K_SPACE
-```
-
-Os valores devem corresponder às constantes de tecla do Pygame (ex: `K_SPACE`, `K_UP`, etc.).
-
-## Dicas para Configuração
-
-### Otimizando o Desempenho
-
-- Para melhor desempenho em dispositivos com recursos limitados, reduza a resolução (ex: `800x600`)
-- Mantenha a velocidade de rolagem do fundo (`scroll_speed`) entre 0.3 e 0.8 para um efeito visualmente agradável
-
-### Personalizando Visualmente
-
-- Você pode substituir a imagem de fundo por qualquer arquivo PNG compatível
-- Ajuste os limites de blocos para garantir que a área do jogo seja totalmente coberta
+Se houver problemas de renderização, como telas em branco ou elementos faltando, verifique se o arquivo TMX do nível está configurado corretamente e se todas as camadas estão visíveis.
 
 ## Próximos Passos
 
-Após configurar o ambiente e personalizar o arquivo `config.ini`, você pode avançar para a seção [Estrutura Geral do Projeto](estrutura_projeto.md) para entender como o 2Do é organizado, ou pular para [Arquivo Principal e Execução](executando.md) para instruções sobre como executar seu primeiro jogo com o 2Do.
+Agora que você sabe como executar o 2Do, explore outros tópicos da documentação para aprofundar seu conhecimento:
+
+- [Gerenciamento de Assets](assets.md)
+- [Controles do Jogo](controle.md)
+- [Entidades do Jogo](entidades.md)
