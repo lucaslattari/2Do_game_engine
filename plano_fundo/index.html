@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
       
       
 
@@ -60,6 +60,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#plano-de-fundo-e-parallax-scrolling" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -191,6 +196,7 @@
   
   <span class="md-ellipsis">
     Introdução
+    
   </span>
   
 
@@ -211,6 +217,7 @@
   
   <span class="md-ellipsis">
     Configuração e Setup
+    
   </span>
   
 
@@ -231,6 +238,7 @@
   
   <span class="md-ellipsis">
     Estrutura Geral do Projeto
+    
   </span>
   
 
@@ -251,6 +259,7 @@
   
   <span class="md-ellipsis">
     Sistema de Gerenciamento de Recursos
+    
   </span>
   
 
@@ -271,6 +280,7 @@
   
   <span class="md-ellipsis">
     Entidades e Objetos do Jogo
+    
   </span>
   
 
@@ -291,6 +301,7 @@
   
   <span class="md-ellipsis">
     Sistema de Entrada e Controle
+    
   </span>
   
 
@@ -311,6 +322,7 @@
   
   <span class="md-ellipsis">
     Lógica de Jogo e Jogador
+    
   </span>
   
 
@@ -332,16 +344,203 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Plano de Fundo e Interface
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     Plano de Fundo e Interface
+    
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carregamento-e-configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carregamento e Configuração
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Carregamento e Configuração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carregamento-da-imagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carregamento da Imagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limites-de-blocos-e-dimensionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limites de Blocos e Dimensionamento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renderizacao-do-plano-de-fundo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renderização do Plano de Fundo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efeito-de-rolagem-paralaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Efeito de Rolagem (Paralaxe)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Efeito de Rolagem (Paralaxe)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atualizacao-da-posicao-da-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualização da Posição da Câmera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacao-do-efeito-paralaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicação do Efeito Paralaxe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-o-paralaxe-cria-profundidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como o Paralaxe Cria Profundidade
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizacao-do-plano-de-fundo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customização do Plano de Fundo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customização do Plano de Fundo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dicas-para-criar-planos-de-fundo-eficazes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dicas para Criar Planos de Fundo Eficazes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-criando-um-efeito-de-ceu-estrelado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo: Criando um Efeito de Céu Estrelado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -359,6 +558,7 @@
   
   <span class="md-ellipsis">
     Utilitários e Configuração Adicional
+    
   </span>
   
 
@@ -379,6 +579,7 @@
   
   <span class="md-ellipsis">
     Arquivo Principal e Execução
+    
   </span>
   
 
@@ -399,6 +600,7 @@
   
   <span class="md-ellipsis">
     Referências e Recursos Adicionais
+    
   </span>
   
 
@@ -424,6 +626,169 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carregamento-e-configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carregamento e Configuração
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Carregamento e Configuração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carregamento-da-imagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carregamento da Imagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limites-de-blocos-e-dimensionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limites de Blocos e Dimensionamento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renderizacao-do-plano-de-fundo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renderização do Plano de Fundo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efeito-de-rolagem-paralaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Efeito de Rolagem (Paralaxe)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Efeito de Rolagem (Paralaxe)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atualizacao-da-posicao-da-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualização da Posição da Câmera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacao-do-efeito-paralaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicação do Efeito Paralaxe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-o-paralaxe-cria-profundidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como o Paralaxe Cria Profundidade
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizacao-do-plano-de-fundo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customização do Plano de Fundo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customização do Plano de Fundo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dicas-para-criar-planos-de-fundo-eficazes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dicas para Criar Planos de Fundo Eficazes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-criando-um-efeito-de-ceu-estrelado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo: Criando um Efeito de Céu Estrelado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -438,12 +803,260 @@
                   
 
 
-  <h1>Plano de Fundo e Interface</h1>
 
+<h1 id="plano-de-fundo-e-parallax-scrolling">Plano de Fundo e Parallax Scrolling</h1>
+<p>Este documento explica como o 2Do gerencia o plano de fundo dos jogos, incluindo como as imagens são carregadas, renderizadas e como o efeito de rolagem paralaxe é implementado para criar uma sensação de profundidade.</p>
+<h2 id="visao-geral">Visão Geral</h2>
+<p>O sistema de plano de fundo do 2Do é projetado para:</p>
+<ol>
+<li>Carregar imagens de fundo a partir de configurações</li>
+<li>Criar uma camada visual que cobre toda a área do jogo</li>
+<li>Implementar efeito de rolagem (paralaxe) para dar sensação de profundidade</li>
+<li>Permitir fácil customização através do arquivo de configuração</li>
+</ol>
+<p>A classe principal responsável por essa funcionalidade é a <code>Background</code>, localizada no arquivo <code>background.py</code>.</p>
+<h2 id="a-classe-background">A Classe Background</h2>
+<pre><code class="language-python">class Background:
+    def __init__(self, tiled_level, config_parser):
+        self.config_parser = config_parser
+
+        # Carrega a imagem de fundo
+        bg_path = self.config_parser.get(&quot;background&quot;, &quot;image&quot;, fallback=&quot;graphics/Background/Brown.png&quot;)
+        self.tile_bg = pygame.image.load(bg_path).convert_alpha()
+
+        # Limites de blocos para X e Y
+        x_bounds = self.config_parser.get(&quot;background&quot;, &quot;x_block_bounds&quot;, fallback=&quot;12,62&quot;)
+        y_bounds = self.config_parser.get(&quot;background&quot;, &quot;y_block_bounds&quot;, fallback=&quot;10,37&quot;)
+
+        self.x_block_bounds = tuple(map(int, x_bounds.split(&quot;,&quot;)))
+        self.y_block_bounds = tuple(map(int, y_bounds.split(&quot;,&quot;)))
+
+        # Velocidade de rolagem (paralaxe)
+        self.scroll_speed = float(self.config_parser.get(&quot;background&quot;, &quot;scroll_speed&quot;, fallback=&quot;0.6&quot;))
+
+        # Posição inicial da câmera
+        self.camera_x = 0
+        self.camera_y = 0
+</code></pre>
+<p>Esta classe é inicializada com dois parâmetros:
+- <code>tiled_level</code>: O nível carregado do arquivo TMX
+- <code>config_parser</code>: O parser de configuração que contém as preferências do plano de fundo</p>
+<p>Durante a inicialização, a classe:
+1. Carrega a imagem de fundo especificada no arquivo de configuração
+2. Configura os limites de blocos (quanto do fundo será renderizado)
+3. Define a velocidade de rolagem para criar o efeito parallax
+4. Inicializa a posição da câmera em (0,0)</p>
+<h2 id="carregamento-e-configuracao">Carregamento e Configuração</h2>
+<h3 id="carregamento-da-imagem">Carregamento da Imagem</h3>
+<p>O plano de fundo é carregado a partir de um arquivo de imagem especificado no <code>config.ini</code>:</p>
+<pre><code class="language-python">bg_path = self.config_parser.get(&quot;background&quot;, &quot;image&quot;, fallback=&quot;graphics/Background/Brown.png&quot;)
+self.tile_bg = pygame.image.load(bg_path).convert_alpha()
+</code></pre>
+<p>O método <code>convert_alpha()</code> otimiza a imagem para renderização mais rápida, preservando o canal de transparência (alpha).</p>
+<h3 id="limites-de-blocos-e-dimensionamento">Limites de Blocos e Dimensionamento</h3>
+<p>O plano de fundo é construído repetindo (ou "tilando") uma imagem base. Os parâmetros <code>x_block_bounds</code> e <code>y_block_bounds</code> definem a área de cobertura:</p>
+<pre><code class="language-python">x_bounds = self.config_parser.get(&quot;background&quot;, &quot;x_block_bounds&quot;, fallback=&quot;12,62&quot;)
+y_bounds = self.config_parser.get(&quot;background&quot;, &quot;y_block_bounds&quot;, fallback=&quot;10,37&quot;)
+
+self.x_block_bounds = tuple(map(int, x_bounds.split(&quot;,&quot;)))
+self.y_block_bounds = tuple(map(int, y_bounds.split(&quot;,&quot;)))
+</code></pre>
+<p>Por exemplo, com <code>x_block_bounds = 12,62</code> e <code>y_block_bounds = 10,37</code>:
+- O plano de fundo terá 50 blocos de largura (62-12)
+- O plano de fundo terá 27 blocos de altura (37-10)</p>
+<p><strong>Por que esses valores são importantes?</strong></p>
+<p>Imagine que cada bloco de fundo tenha dimensões de 64x64 pixels. Com os valores acima:
+- A largura total do fundo seria 50 × 64 = 3200 pixels
+- A altura total do fundo seria 27 × 64 = 1728 pixels</p>
+<p>Esses valores devem ser grandes o suficiente para cobrir a área visível do jogo, mesmo durante a rolagem.</p>
+<h2 id="renderizacao-do-plano-de-fundo">Renderização do Plano de Fundo</h2>
+<p>A renderização do plano de fundo acontece no método <code>render</code>:</p>
+<pre><code class="language-python">def render(self, screen, block_size):
+    # Calcula o tamanho total do plano de fundo
+    bg_width = (self.x_block_bounds[1] - self.x_block_bounds[0]) * self.tile_bg.get_width()
+    bg_height = (self.y_block_bounds[1] - self.y_block_bounds[0]) * self.tile_bg.get_height()
+
+    # Calcula quantos blocos são visíveis na tela
+    screen_width, screen_height = screen.get_size()
+    visible_width = screen_width / block_size[0]
+    visible_height = screen_height / block_size[1]
+
+    # Calcula a posição da câmera aplicando o efeito parallax
+    camera_x = self.camera_x * self.scroll_speed
+    camera_y = self.camera_y * self.scroll_speed
+
+    # Calcula a posição de início da renderização
+    start_x = int(camera_x) % self.tile_bg.get_width()
+    start_y = int(camera_y) % self.tile_bg.get_height()
+
+    # Renderiza os blocos visíveis
+    for y in range(-1, int(visible_height) + 2):
+        for x in range(-1, int(visible_width) + 2):
+            # Posição do bloco na tela
+            draw_x = (x * self.tile_bg.get_width()) - start_x
+            draw_y = (y * self.tile_bg.get_height()) - start_y
+
+            # Desenha o bloco
+            screen.blit(self.tile_bg, (draw_x, draw_y))
+</code></pre>
+<p>Este método implementa um sistema de renderização eficiente:</p>
+<ol>
+<li><strong>Cálculo de dimensões</strong>:</li>
+<li>Determina o tamanho total do plano de fundo com base nos limites de blocos</li>
+<li>
+<p>Calcula quantos blocos são visíveis na tela atual</p>
+</li>
+<li>
+<p><strong>Posicionamento da câmera com parallax</strong>:</p>
+</li>
+<li>Aplica a velocidade de rolagem à posição da câmera para criar o efeito paralaxe</li>
+<li>
+<p>O efeito paralaxe faz com que o fundo se mova mais lentamente que os elementos do jogo</p>
+</li>
+<li>
+<p><strong>Tiling eficiente</strong>:</p>
+</li>
+<li>Calcula a posição inicial de desenho com base na posição da câmera</li>
+<li>Renderiza apenas os blocos visíveis na tela, mais uma margem de segurança (-1 e +2)</li>
+<li>
+<p>Usa a operação de módulo (%) para criar um padrão de repetição infinita</p>
+</li>
+<li>
+<p><strong>Desenho dos blocos</strong>:</p>
+</li>
+<li>Posiciona cada bloco no local correto da tela</li>
+<li>Usa <code>screen.blit()</code> para desenhar a imagem na superfície da tela</li>
+</ol>
+<p>A imagem abaixo ilustra como funciona a renderização do plano de fundo por tiling:</p>
+<pre><code>+---+---+---+---+---+  
+| 1 | 2 | 3 | 4 | 5 |  → Blocos de imagem repetidos horizontalmente
++---+---+---+---+---+
+| 6 | 7 | 8 | 9 |10 |
++---+---+---+---+---+  → Área visível da tela
+|11 |12 |13 |14 |15 |     (pode mostrar apenas uma parte do padrão)
++---+---+---+---+---+
+|16 |17 |18 |19 |20 |
++---+---+---+---+---+
+</code></pre>
+<h2 id="efeito-de-rolagem-paralaxe">Efeito de Rolagem (Paralaxe)</h2>
+<p>O efeito de parallax é o que dá profundidade ao jogo, fazendo com que o plano de fundo se mova mais lentamente que os elementos em primeiro plano. Isto simula o fenômeno do mundo real onde objetos distantes parecem se mover mais devagar quando nos deslocamos.</p>
+<h3 id="atualizacao-da-posicao-da-camera">Atualização da Posição da Câmera</h3>
+<pre><code class="language-python">def update(self, player_x, player_y):
+    # Atualiza a posição da câmera com base na posição do jogador
+    self.camera_x = player_x - (self.x_block_bounds[1] - self.x_block_bounds[0]) / 2
+    self.camera_y = player_y - (self.y_block_bounds[1] - self.y_block_bounds[0]) / 2
+
+    # Limita a câmera aos limites do mundo do jogo
+    self.camera_x = max(self.x_block_bounds[0], min(self.camera_x, self.x_block_bounds[1]))
+    self.camera_y = max(self.y_block_bounds[0], min(self.camera_y, self.y_block_bounds[1]))
+</code></pre>
+<p>O método <code>update</code> é chamado a cada frame do jogo e realiza estas operações:</p>
+<ol>
+<li><strong>Centraliza a câmera no jogador</strong>:</li>
+<li>Calcula a posição ideal da câmera para manter o jogador no centro da tela</li>
+<li>
+<p>Subtrai metade da largura/altura visível para centralizar</p>
+</li>
+<li>
+<p><strong>Limita os limites da câmera</strong>:</p>
+</li>
+<li>Impede que a câmera se mova além dos limites do mundo do jogo</li>
+<li>Usa <code>max</code> e <code>min</code> para restringir os valores dentro dos limites definidos</li>
+</ol>
+<h3 id="aplicacao-do-efeito-paralaxe">Aplicação do Efeito Paralaxe</h3>
+<p>O efeito paralaxe propriamente dito é aplicado durante a renderização:</p>
+<pre><code class="language-python"># No método render
+camera_x = self.camera_x * self.scroll_speed
+camera_y = self.camera_y * self.scroll_speed
+</code></pre>
+<p>O <code>scroll_speed</code> controla quão rapidamente o fundo se move em relação aos elementos do jogo:</p>
 <ul>
-<li>Arquivo: background.py.</li>
-<li>Como o plano de fundo é carregado e renderizado.</li>
-<li>Efeito de rolagem (update e render).</li>
+<li><code>scroll_speed = 1.0</code>: O fundo se move na mesma velocidade que o jogador (sem efeito parallax)</li>
+<li><code>scroll_speed = 0.5</code>: O fundo se move na metade da velocidade do jogador (paralaxe moderado)</li>
+<li><code>scroll_speed = 0.2</code>: O fundo se move muito mais lentamente que o jogador (paralaxe intenso)</li>
+</ul>
+<p>Quanto menor o valor, mais distante o fundo parece estar, criando uma impressão de profundidade maior.</p>
+<h3 id="como-o-paralaxe-cria-profundidade">Como o Paralaxe Cria Profundidade</h3>
+<p>Para entender como o paralaxe cria profundidade, imagine um cenário com três camadas:</p>
+<ol>
+<li><strong>Jogador e plataformas</strong> - Movem-se 1:1 com a câmera (primeiro plano)</li>
+<li><strong>Montanhas</strong> - Movem-se a 0.6x da velocidade da câmera (plano médio)</li>
+<li><strong>Céu estrelado</strong> - Move-se a 0.2x da velocidade da câmera (plano de fundo distante)</li>
+</ol>
+<p>Quando o jogador se move 100 pixels para a direita:
+- O jogador e as plataformas se movem 100 pixels na tela
+- As montanhas se movem apenas 60 pixels (0.6 × 100)
+- O céu estrelado se move apenas 20 pixels (0.2 × 100)</p>
+<p>Este efeito imita o que vemos no mundo real: quando nos movemos, objetos próximos parecem passar mais rapidamente que objetos distantes. Dirigindo em uma estrada, as árvores próximas passam rapidamente, enquanto as montanhas distantes parecem se mover muito lentamente.</p>
+<h2 id="customizacao-do-plano-de-fundo">Customização do Plano de Fundo</h2>
+<p>O sistema de plano de fundo do 2Do é altamente customizável através do arquivo <code>config.ini</code>:</p>
+<pre><code class="language-ini">[background]
+image = graphics/Background/Brown.png
+x_block_bounds = 12,62
+y_block_bounds = 10,37
+scroll_speed = 0.6
+</code></pre>
+<p>Você pode modificar:</p>
+<ol>
+<li><strong><code>image</code></strong>: Caminho para qualquer imagem PNG compatível</li>
+<li>Recomenda-se usar imagens que possam ser repetidas naturalmente (tilable)</li>
+<li>
+<p>Imagens pequenas (64x64 ou 128x128) funcionam bem para padrões repetitivos</p>
+</li>
+<li>
+<p><strong><code>x_block_bounds</code> e <code>y_block_bounds</code></strong>: Define o tamanho do mundo do jogo</p>
+</li>
+<li>Valores maiores criam mundos mais amplos</li>
+<li>
+<p>Deve ser grande o suficiente para acomodar todos os elementos do jogo</p>
+</li>
+<li>
+<p><strong><code>scroll_speed</code></strong>: Controla o efeito de parallax</p>
+</li>
+<li>Valores entre 0.3 e 0.8 geralmente funcionam bem</li>
+<li>Valores mais baixos criam uma sensação de maior profundidade</li>
+</ol>
+<h3 id="dicas-para-criar-planos-de-fundo-eficazes">Dicas para Criar Planos de Fundo Eficazes</h3>
+<ol>
+<li><strong>Use imagens tilable</strong>: Imagens que se repetem naturalmente sem bordas visíveis</li>
+<li>Texturas como grama, terra, céu, tijolos funcionam bem</li>
+<li>
+<p>Evite elementos únicos que criariam repetição óbvia</p>
+</li>
+<li>
+<p><strong>Considere múltiplas camadas</strong>: Para jogos mais complexos, pode-se implementar várias camadas</p>
+</li>
+<li>Céu (mais distante, scroll_speed baixo)</li>
+<li>Montanhas ou nuvens (distância média, scroll_speed médio)</li>
+<li>
+<p>Árvores ou arbustos (mais próximo, scroll_speed mais alto)</p>
+</li>
+<li>
+<p><strong>Otimize o desempenho</strong>:</p>
+</li>
+<li>Use imagens de tamanho razoável (evite texturas gigantes)</li>
+<li>Certifique-se de que sua imagem use <code>convert_alpha()</code> para melhor desempenho</li>
+</ol>
+<h3 id="exemplo-criando-um-efeito-de-ceu-estrelado">Exemplo: Criando um Efeito de Céu Estrelado</h3>
+<pre><code class="language-ini">[background]
+image = graphics/Background/NightSky.png
+x_block_bounds = 10,70
+y_block_bounds = 5,45
+scroll_speed = 0.2
+</code></pre>
+<p>Com este exemplo:
+- Uma imagem de céu estrelado será usada como fundo
+- O mundo do jogo será grande (60 blocos de largura por 40 de altura)
+- O efeito parallax será intenso (0.2), fazendo com que o céu pareça muito distante</p>
+<h2 id="conclusao">Conclusão</h2>
+<p>O sistema de plano de fundo do 2Do oferece uma solução simples mas eficaz para criar cenários visualmente interessantes com efeito de profundidade. Através da técnica de tiling e do efeito paralaxe, o motor consegue criar a ilusão de um mundo maior e mais profundo, mesmo com recursos gráficos limitados.</p>
+<p>A facilidade de configuração permite que desenvolvedores personalizem rapidamente a aparência de seus jogos sem precisar modificar o código-fonte.</p>
+<h2 id="proximos-passos">Próximos Passos</h2>
+<p>Agora que você entende como funciona o sistema de plano de fundo, pode explorar:</p>
+<ul>
+<li><a href="../entidades/">Entidades e Objetos do Jogo</a> - Como objetos são posicionados neste mundo</li>
+<li><a href="../executando/">Configuração e Setup</a> - Mais opções de configuração para personalizar seu jogo</li>
+<li><a href="../assets/">Sistema de Gerenciamento de Recursos</a> - Como outros recursos gráficos são gerenciados</li>
 </ul>
 
 
@@ -491,10 +1104,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

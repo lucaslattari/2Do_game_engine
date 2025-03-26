@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
       
       
 
@@ -60,6 +60,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#sistema-de-entrada-e-controle" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -191,6 +196,7 @@
   
   <span class="md-ellipsis">
     Introdução
+    
   </span>
   
 
@@ -211,6 +217,7 @@
   
   <span class="md-ellipsis">
     Configuração e Setup
+    
   </span>
   
 
@@ -231,6 +238,7 @@
   
   <span class="md-ellipsis">
     Estrutura Geral do Projeto
+    
   </span>
   
 
@@ -251,6 +259,7 @@
   
   <span class="md-ellipsis">
     Sistema de Gerenciamento de Recursos
+    
   </span>
   
 
@@ -271,6 +280,7 @@
   
   <span class="md-ellipsis">
     Entidades e Objetos do Jogo
+    
   </span>
   
 
@@ -292,16 +302,188 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sistema de Entrada e Controle
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     Sistema de Entrada e Controle
+    
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-do-sistema-de-controle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral do Sistema de Controle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-inputhandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe InputHandler
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao-de-controles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuração de Controles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuração de Controles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-atraves-do-arquivo-configini" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Através do Arquivo config.ini
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-controles-padrao" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Controles Padrão
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processamento-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processamento de Eventos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacao-de-estado-de-teclas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificação de Estado de Teclas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controle-de-modo-de-tela" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controle de Modo de Tela
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoes-suportadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ações Suportadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expandindo-o-sistema-de-controle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expandindo o Sistema de Controle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expandindo o Sistema de Controle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-adicionar-novas-acoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Adicionar Novas Ações
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-suporte-a-controles-alternativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Suporte a Controles Alternativos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-suporte-a-gamepad" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Suporte a Gamepad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -319,6 +501,7 @@
   
   <span class="md-ellipsis">
     Lógica de Jogo e Jogador
+    
   </span>
   
 
@@ -339,6 +522,7 @@
   
   <span class="md-ellipsis">
     Plano de Fundo e Interface
+    
   </span>
   
 
@@ -359,6 +543,7 @@
   
   <span class="md-ellipsis">
     Utilitários e Configuração Adicional
+    
   </span>
   
 
@@ -379,6 +564,7 @@
   
   <span class="md-ellipsis">
     Arquivo Principal e Execução
+    
   </span>
   
 
@@ -399,6 +585,7 @@
   
   <span class="md-ellipsis">
     Referências e Recursos Adicionais
+    
   </span>
   
 
@@ -424,6 +611,154 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-do-sistema-de-controle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral do Sistema de Controle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-inputhandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe InputHandler
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao-de-controles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuração de Controles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuração de Controles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-atraves-do-arquivo-configini" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Através do Arquivo config.ini
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-controles-padrao" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Controles Padrão
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processamento-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processamento de Eventos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacao-de-estado-de-teclas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificação de Estado de Teclas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controle-de-modo-de-tela" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controle de Modo de Tela
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoes-suportadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ações Suportadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expandindo-o-sistema-de-controle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expandindo o Sistema de Controle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expandindo o Sistema de Controle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-adicionar-novas-acoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Adicionar Novas Ações
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-suporte-a-controles-alternativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Suporte a Controles Alternativos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-suporte-a-gamepad" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Suporte a Gamepad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -438,12 +773,236 @@
                   
 
 
-  <h1>Sistema de Entrada e Controle</h1>
 
+<h1 id="sistema-de-entrada-e-controle">Sistema de Entrada e Controle</h1>
+<p>Este documento explica como o 2Do gerencia a entrada do usuário, processa eventos de teclado e mapeia teclas para ações no jogo. O sistema de controle é centralizado na classe <code>InputHandler</code>, que fornece uma camada de abstração entre o hardware (teclado) e a lógica do jogo.</p>
+<h2 id="visao-geral-do-sistema-de-controle">Visão Geral do Sistema de Controle</h2>
+<p>O 2Do implementa um sistema de controle baseado em mapeamento de teclas para ações, permitindo:</p>
+<ol>
+<li>Configuração flexível de controles através do arquivo <code>config.ini</code></li>
+<li>Processamento centralizado de eventos de teclado</li>
+<li>Verificação simplificada do estado de teclas durante a atualização do jogo</li>
+<li>Suporte a teclas globais como ESC (sair) e F11 (alternar tela cheia)</li>
+</ol>
+<p>A arquitetura do sistema separa claramente a entrada de dados da lógica de jogo, facilitando personalizações e extensões.</p>
+<h2 id="a-classe-inputhandler">A Classe InputHandler</h2>
+<p>O arquivo <code>input_handler.py</code> contém a classe <code>InputHandler</code>, responsável por todo o processamento de entrada do usuário:</p>
+<pre><code class="language-python">class InputHandler:
+    def __init__(self, config_parser):
+        self.quit_game = False
+        self.fullscreen_toggled = False
+
+        # Carregar as teclas de controle do arquivo de configuração
+        self.key_map = {}
+        self.key_state = {}
+        if config_parser.has_section(&quot;controls&quot;):
+            for action, key_name in config_parser.items(&quot;controls&quot;):
+                try:
+                    key_constant = getattr(pygame, key_name)
+                    self.key_map[key_constant] = action
+                    self.key_state[action] = False
+                except AttributeError:
+                    print(f&quot;Tecla inválida no arquivo de configuração: {key_name}&quot;)
+        else:
+            # Valores padrão caso a seção 'controls' não exista
+            self.key_map = {
+                pygame.K_UP: &quot;up&quot;,
+                pygame.K_DOWN: &quot;down&quot;,
+                pygame.K_LEFT: &quot;left&quot;,
+                pygame.K_RIGHT: &quot;right&quot;,
+                pygame.K_SPACE: &quot;jump&quot;,
+                pygame.K_a: &quot;left&quot;,
+                pygame.K_d: &quot;right&quot;,
+                pygame.K_w: &quot;up&quot;,
+                pygame.K_s: &quot;down&quot;,
+            }
+            self.key_state = {action: False for action in self.key_map.values()}
+</code></pre>
+<p>O construtor da classe realiza as seguintes tarefas:
+1. Inicializa flags de controle (<code>quit_game</code>, <code>fullscreen_toggled</code>)
+2. Tenta carregar mapeamentos de teclas do arquivo de configuração
+3. Se a configuração não for encontrada, configura mapeamentos padrão que incluem tanto as setas direcionais quanto WASD
+4. Inicializa o estado de cada ação (pressionada ou não)</p>
+<h2 id="configuracao-de-controles">Configuração de Controles</h2>
+<p>O 2Do permite dois métodos para configurar os controles do jogo:</p>
+<h3 id="1-atraves-do-arquivo-configini">1. Através do Arquivo config.ini</h3>
+<p>Você pode adicionar uma seção <code>[controls]</code> ao arquivo <code>config.ini</code> para personalizar as teclas:</p>
+<pre><code class="language-ini">[controls]
+up = K_UP
+down = K_DOWN
+left = K_LEFT
+right = K_RIGHT
+jump = K_SPACE
+</code></pre>
+<p>Cada linha mapeia uma ação (como "up" ou "jump") para uma constante de tecla do Pygame (como "K_UP" ou "K_SPACE").</p>
+<p><strong>Importante:</strong> Se você definir controles personalizados no <code>config.ini</code>, apenas os controles especificados estarão disponíveis. O suporte automático a WASD não é incluído neste caso, a menos que você adicione explicitamente essas teclas à configuração.</p>
+<h3 id="2-controles-padrao">2. Controles Padrão</h3>
+<p>Se o arquivo <code>config.ini</code> não contiver uma seção <code>[controls]</code>, o sistema ativa automaticamente um conjunto padrão de mapeamentos:</p>
 <ul>
-<li>Arquivo: input_handler.py.</li>
-<li>Como o controle é configurado.</li>
-<li>Eventos de teclado e ações suportadas.</li>
+<li><strong>Setas direcionais</strong>: Movimentação (cima, baixo, esquerda, direita)</li>
+<li><strong>WASD</strong>: Controles alternativos para movimentação (W=cima, A=esquerda, S=baixo, D=direita)</li>
+<li><strong>Barra de espaço</strong>: Pular</li>
+</ul>
+<p>Esta configuração padrão é amigável para jogadores destros e canhotos, oferecendo duas opções comuns para controle de movimento sem necessidade de configuração adicional.</p>
+<h2 id="processamento-de-eventos">Processamento de Eventos</h2>
+<p>O método <code>process_events</code> é o coração do sistema de controle, processando a fila de eventos do Pygame a cada quadro:</p>
+<pre><code class="language-python">def process_events(self):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            self.quit_game = True
+
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                self.quit_game = True
+            elif event.key == pygame.K_F11:
+                self.fullscreen_toggled = True
+
+            key_action = self.key_map.get(event.key)
+            if key_action:
+                self.key_state[key_action] = True
+
+        elif event.type == pygame.KEYUP:
+            key_action = self.key_map.get(event.key)
+            if key_action:
+                self.key_state[key_action] = False
+</code></pre>
+<p>Este método:
+1. Itera por todos os eventos pendentes no Pygame
+2. Processa eventos de saída (fechar janela)
+3. Verifica teclas especiais (ESC para sair, F11 para tela cheia)
+4. Atualiza o estado de ações mapeadas conforme teclas são pressionadas ou liberadas</p>
+<h2 id="verificacao-de-estado-de-teclas">Verificação de Estado de Teclas</h2>
+<p>A classe fornece um método simples para verificar se uma ação está ativa:</p>
+<pre><code class="language-python">def is_pressed(self, action):
+    return self.key_state.get(action, False)
+</code></pre>
+<p>Este método é usado em todo o código do jogo para verificar entradas do usuário, como no trecho de <code>player.py</code>:</p>
+<pre><code class="language-python"># Exemplo de uso em Player.update_state_and_velocity
+if input_handler.is_pressed(&quot;left&quot;):
+    self.face_direction = &quot;left&quot;
+    if self.on_ground:
+        self.state = &quot;run&quot;
+    self.velocity = max(-self.max_velocity, self.velocity - self.acceleration)
+</code></pre>
+<p>A abordagem baseada em ações (em vez de teclas específicas) torna o código mais limpo e facilita a personalização dos controles sem modificar a lógica do jogo.</p>
+<h2 id="controle-de-modo-de-tela">Controle de Modo de Tela</h2>
+<p>O <code>InputHandler</code> também gerencia a alternância entre tela cheia e modo janela:</p>
+<pre><code class="language-python">def reset_toggle_fullscreen(self):
+    self.fullscreen_toggled = False
+</code></pre>
+<p>Quando a tecla F11 é pressionada, a flag <code>fullscreen_toggled</code> é definida. A classe <code>Game</code> verifica esta flag durante sua atualização:</p>
+<pre><code class="language-python"># Em Game.update
+if input_handler.fullscreen_toggled:
+    self.toggle_fullscreen()
+    input_handler.reset_toggle_fullscreen()
+</code></pre>
+<p>Este padrão evita que a mesma tecla F11 alterne o modo repetidamente em um único pressionamento.</p>
+<h2 id="acoes-suportadas">Ações Suportadas</h2>
+<p>O 2Do atualmente suporta as seguintes ações de jogo:</p>
+<table>
+<thead>
+<tr>
+<th>Ação</th>
+<th>Descrição</th>
+<th>Teclas Padrão (sem configuração personalizada)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>up</code></td>
+<td>Mover para cima / Pular</td>
+<td>Seta para cima, W</td>
+</tr>
+<tr>
+<td><code>down</code></td>
+<td>Mover para baixo / Descer por plataformas</td>
+<td>Seta para baixo, S</td>
+</tr>
+<tr>
+<td><code>left</code></td>
+<td>Mover para a esquerda</td>
+<td>Seta para a esquerda, A</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>Mover para a direita</td>
+<td>Seta para a direita, D</td>
+</tr>
+<tr>
+<td><code>jump</code></td>
+<td>Pular (alias para <code>up</code> em alguns contextos)</td>
+<td>Barra de espaço</td>
+</tr>
+</tbody>
+</table>
+<p>Além disso, as seguintes teclas globais são sempre processadas independentemente da configuração:</p>
+<table>
+<thead>
+<tr>
+<th>Tecla</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ESC</code></td>
+<td>Sair do jogo</td>
+</tr>
+<tr>
+<td><code>F11</code></td>
+<td>Alternar modo tela cheia</td>
+</tr>
+</tbody>
+</table>
+<h2 id="expandindo-o-sistema-de-controle">Expandindo o Sistema de Controle</h2>
+<p>O sistema de controle foi projetado para ser facilmente extensível. Aqui estão algumas maneiras de expandir sua funcionalidade:</p>
+<h3 id="1-adicionar-novas-acoes">1. Adicionar Novas Ações</h3>
+<p>Para adicionar uma nova ação (como "atacar" ou "usar item"):</p>
+<ol>
+<li>
+<p>Adicione a nova ação ao arquivo <code>config.ini</code>:
+   <code>ini
+   [controls]
+   up = K_UP
+   down = K_DOWN
+   left = K_LEFT
+   right = K_RIGHT
+   jump = K_SPACE
+   attack = K_LCTRL</code></p>
+</li>
+<li>
+<p>Verifique a nova ação em seu código:
+   <code>python
+   if input_handler.is_pressed("attack"):
+       player.attack()</code></p>
+</li>
+</ol>
+<h3 id="2-suporte-a-controles-alternativos">2. Suporte a Controles Alternativos</h3>
+<p>Você pode adicionar controles alternativos usando nomes de ação com sufixos diferentes:</p>
+<pre><code class="language-ini">[controls]
+up = K_UP
+up_alt = K_w
+down = K_DOWN
+down_alt = K_s
+left = K_LEFT
+left_alt = K_a
+right = K_RIGHT
+right_alt = K_d
+jump = K_SPACE
+</code></pre>
+<p>Em seguida, verifique as ações no código como faria normalmente:</p>
+<pre><code class="language-python">if input_handler.is_pressed(&quot;up&quot;):
+    # Lógica para movimento para cima (acionado por seta para cima OU tecla W)
+</code></pre>
+<p>O sistema de mapeamento de teclas garante que quaisquer teclas mapeadas para a mesma ação acionarão o mesmo comportamento.</p>
+<h3 id="3-suporte-a-gamepad">3. Suporte a Gamepad</h3>
+<p>Uma extensão natural seria adicionar suporte a gamepad, estendendo o <code>InputHandler</code> para processar eventos de joystick do Pygame.</p>
+<h2 id="proximos-passos">Próximos Passos</h2>
+<p>Agora que você compreende o sistema de controle do 2Do, pode explorar:</p>
+<ul>
+<li><a href="../logica_jogo/">Lógica de Jogo e Jogador</a> - Como o jogador responde às entradas do usuário</li>
+<li><a href="../utils/">Utilitários e Configuração</a> - Mais opções de configuração disponíveis</li>
+<li><a href="../plano_fundo/">Plano de Fundo e Interface</a> - Como a interface do jogo é renderizada</li>
 </ul>
 
 
@@ -491,10 +1050,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

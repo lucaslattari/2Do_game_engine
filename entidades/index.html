@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
       
       
 
@@ -60,6 +60,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#entidades-e-objetos-do-jogo" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -191,6 +196,7 @@
   
   <span class="md-ellipsis">
     Introdução
+    
   </span>
   
 
@@ -211,6 +217,7 @@
   
   <span class="md-ellipsis">
     Configuração e Setup
+    
   </span>
   
 
@@ -231,6 +238,7 @@
   
   <span class="md-ellipsis">
     Estrutura Geral do Projeto
+    
   </span>
   
 
@@ -251,6 +259,7 @@
   
   <span class="md-ellipsis">
     Sistema de Gerenciamento de Recursos
+    
   </span>
   
 
@@ -272,16 +281,245 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Entidades e Objetos do Jogo
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     Entidades e Objetos do Jogo
+    
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-do-sistema-de-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral do Sistema de Entidades
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Tile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Classe Tile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propriedades-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedades Principais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animacao-de-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animação de Tiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderizacao-de-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renderização de Tiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retangulos-de-colisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retângulos de Colisão
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Entity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Classe Entity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos Principais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entidades-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entidades Específicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entidades Específicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-classe-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Platform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-classe-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Item
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sistema-de-colisoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistema de Colisões
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistema de Colisões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-basica-de-colisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificação Básica de Colisão
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colisao-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Colisão Horizontal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colisao-vertical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Colisão Vertical
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descida-atraves-de-plataformas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descida através de Plataformas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciclo-de-atualizacao-de-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de Atualização de Entidades
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-do-sistema-de-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo do Sistema de Entidades
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -299,6 +537,7 @@
   
   <span class="md-ellipsis">
     Sistema de Entrada e Controle
+    
   </span>
   
 
@@ -319,6 +558,7 @@
   
   <span class="md-ellipsis">
     Lógica de Jogo e Jogador
+    
   </span>
   
 
@@ -339,6 +579,7 @@
   
   <span class="md-ellipsis">
     Plano de Fundo e Interface
+    
   </span>
   
 
@@ -359,6 +600,7 @@
   
   <span class="md-ellipsis">
     Utilitários e Configuração Adicional
+    
   </span>
   
 
@@ -379,6 +621,7 @@
   
   <span class="md-ellipsis">
     Arquivo Principal e Execução
+    
   </span>
   
 
@@ -399,6 +642,7 @@
   
   <span class="md-ellipsis">
     Referências e Recursos Adicionais
+    
   </span>
   
 
@@ -424,6 +668,211 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-do-sistema-de-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral do Sistema de Entidades
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Tile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Classe Tile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propriedades-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedades Principais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animacao-de-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animação de Tiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderizacao-de-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renderização de Tiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retangulos-de-colisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retângulos de Colisão
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Entity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Classe Entity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos Principais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entidades-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entidades Específicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entidades Específicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-classe-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Platform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-classe-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe Item
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sistema-de-colisoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistema de Colisões
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistema de Colisões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-basica-de-colisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificação Básica de Colisão
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colisao-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Colisão Horizontal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colisao-vertical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Colisão Vertical
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descida-atraves-de-plataformas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descida através de Plataformas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciclo-de-atualizacao-de-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de Atualização de Entidades
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-do-sistema-de-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo do Sistema de Entidades
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -438,12 +887,309 @@
                   
 
 
-  <h1>Entidades e Objetos do Jogo</h1>
 
+<h1 id="entidades-e-objetos-do-jogo">Entidades e Objetos do Jogo</h1>
+<p>Este documento explora o sistema de entidades do 2Do, explicando como objetos do jogo são representados, atualizados e renderizados. O sistema de entidades fornece a base para todos os elementos interativos do jogo, desde o jogador até plataformas e itens.</p>
+<h2 id="visao-geral-do-sistema-de-entidades">Visão Geral do Sistema de Entidades</h2>
+<p>No 2Do, todas as entidades são construídas a partir de um sistema de classes hierárquico:</p>
 <ul>
-<li>Arquivos: entity.py, item.py, platformer.py.</li>
-<li>Explicação das classes: Entity, Tile, Item, Platform.</li>
-<li>Colisões e atualizações.</li>
+<li>A classe <code>Tile</code> representa a unidade básica visual (um ladrilho ou sprite)</li>
+<li>A classe <code>Entity</code> atua como base para todos os objetos interativos no jogo</li>
+<li>Classes específicas como <code>Player</code>, <code>Platform</code> e <code>Item</code> estendem a classe <code>Entity</code> com comportamentos únicos</li>
+</ul>
+<p>Este design orientado a objetos permite reutilização de código e extensibilidade, tornando fácil adicionar novos tipos de entidades ao jogo.</p>
+<h2 id="a-classe-tile">A Classe Tile</h2>
+<p>A classe <code>Tile</code> (definida em <code>entity.py</code>) representa um elemento visual fundamental do jogo. Um tile pode ser uma parte de uma plataforma, um item coletável, ou um quadro de animação do personagem.</p>
+<h3 id="propriedades-principais">Propriedades Principais</h3>
+<pre><code class="language-python">class Tile:
+    def __init__(self, tile_data):
+        self.current_frame = 0
+        self.timer_next_frame = 0.0
+        self.id = tile_data.get(&quot;id&quot;)
+        self.width = tile_data.get(&quot;width&quot;)
+        self.height = tile_data.get(&quot;height&quot;)
+        self.position = tile_data.get(&quot;position&quot;, []).copy()
+        self.sprites = tile_data.get(&quot;sprites&quot;)
+        self.collidable_horizontal = tile_data.get(&quot;collidable_horizontal&quot;, False)
+        self.collidable_vertical = tile_data.get(&quot;collidable_vertical&quot;, False)
+        self.can_descend = tile_data.get(&quot;can_descend&quot;, False)
+</code></pre>
+<p>Cada tile possui:</p>
+<ul>
+<li><strong>Informações de tamanho</strong> (<code>width</code>, <code>height</code>): dimensões do tile em pixels</li>
+<li><strong>Posição</strong> (<code>position</code>): lista de coordenadas onde este tile aparece no mapa, em unidades de tile (não pixels)</li>
+<li><strong>Sprites</strong> (<code>sprites</code>): imagens que representam o tile (múltiplas para animações)</li>
+<li><strong>Propriedades de colisão</strong> (<code>collidable_horizontal</code>, <code>collidable_vertical</code>): determinam como o tile interage com outras entidades</li>
+<li><strong>Propriedade especial</strong> (<code>can_descend</code>): indica se o jogador pode descer por esta plataforma</li>
+</ul>
+<h3 id="animacao-de-tiles">Animação de Tiles</h3>
+<p>A classe <code>Tile</code> inclui suporte para animação através de seus métodos <code>update</code> e <code>render</code>:</p>
+<pre><code class="language-python">def update(self, delta_time, frame_duration=0.1):
+    self.timer_next_frame += delta_time
+    if self.timer_next_frame &gt;= frame_duration:
+        self.current_frame = (self.current_frame + 1) % len(self.sprites)
+        self.timer_next_frame -= frame_duration
+</code></pre>
+<p>Este método:
+1. Acumula o tempo decorrido desde o último quadro
+2. Quando o tempo acumulado excede a duração do quadro, avança para o próximo
+3. Reinicia o temporizador para o próximo ciclo de animação</p>
+<p>A animação funciona avançando ciclicamente pelos sprites disponíveis no array <code>self.sprites</code>.</p>
+<h3 id="renderizacao-de-tiles">Renderização de Tiles</h3>
+<pre><code class="language-python">def render(self, screen, block_size):
+    for pos in self.position:
+        screen.blit(
+            self.sprites[self.current_frame],
+            (
+                pos[0] * block_size[0],
+                pos[1] * block_size[1],
+            ),
+        )
+</code></pre>
+<p>O método <code>render</code>:
+1. Percorre todas as posições onde este tile deve aparecer
+2. Desenha o sprite atual (determinado por <code>current_frame</code>) em cada posição
+3. Converte coordenadas de tile para coordenadas de pixel multiplicando pela dimensão do bloco</p>
+<h3 id="retangulos-de-colisao">Retângulos de Colisão</h3>
+<pre><code class="language-python">def get_rect(self, block_size):
+    rects = []
+    for pos in self.position:
+        rect = pygame.Rect(
+            pos[0] * block_size[0], pos[1] * block_size[1], self.width, self.height
+        )
+        rects.append(rect)
+    return rects
+</code></pre>
+<p>Este método cria retângulos de colisão pygame para cada posição do tile, convertendo coordenadas de tile para coordenadas de pixel.</p>
+<h2 id="a-classe-entity">A Classe Entity</h2>
+<p>A classe <code>Entity</code> (também em <code>entity.py</code>) serve como base para todos os objetos interativos do jogo. Ela gerencia um conjunto de tiles e fornece métodos comuns para atualização, renderização e detecção de colisão.</p>
+<pre><code class="language-python">class Entity:
+    def __init__(self, tile_data):
+        self.tiles = []
+        self.parse(tile_data)
+
+    def parse(self, tile_data):
+        for t in tile_data:
+            tile = Tile(t)
+            self.tiles.append(tile)
+</code></pre>
+<p>Uma <code>Entity</code> é essencialmente uma coleção de <code>Tile</code>s que são tratados como um único objeto lógico. Por exemplo:
+- Um <code>Player</code> pode ter diferentes conjuntos de tiles para estados como "idle", "running" e "jumping"
+- Uma <code>Platform</code> pode consistir de múltiplos tiles conectados</p>
+<h3 id="metodos-principais">Métodos Principais</h3>
+<pre><code class="language-python">def render(self, screen, block_size):
+    for tile in self.tiles:
+        tile.render(screen, block_size)
+
+def update(self, delta_time):
+    for tile in self.tiles:
+        tile.update(delta_time)
+
+def check_collision(self, rect1, rect2):
+    return pygame.Rect(rect1).colliderect(pygame.Rect(rect2))
+</code></pre>
+<p>Estes métodos:
+1. <code>render</code>: Desenha todos os tiles da entidade na tela
+2. <code>update</code>: Atualiza o estado de todos os tiles (animação, etc.)
+3. <code>check_collision</code>: Verifica se dois retângulos estão colidindo</p>
+<h2 id="entidades-especificas">Entidades Específicas</h2>
+<h3 id="a-classe-platform">A Classe Platform</h3>
+<p>Definida em <code>platformer.py</code>, a classe <code>Platform</code> representa superfícies onde o jogador pode andar, pular ou se mover:</p>
+<pre><code class="language-python">from entity import Entity
+
+class Platform(Entity):
+    def __init__(self, data):
+        super().__init__(data)
+</code></pre>
+<p>Embora simples em sua implementação, as plataformas têm propriedades importantes que são definidas nos dados de seus tiles:</p>
+<ul>
+<li><code>collidable_horizontal</code>: Se verdadeiro, o jogador não pode passar horizontalmente através da plataforma</li>
+<li><code>collidable_vertical</code>: Se verdadeiro, o jogador não pode passar verticalmente através da plataforma</li>
+<li><code>can_descend</code>: Se verdadeiro, o jogador pode descer pela plataforma pressionando a tecla para baixo</li>
+</ul>
+<p>Estas propriedades permitem criar diversos tipos de plataformas:
+- <strong>Plataformas sólidas</strong>: Bloqueiam movimento em todas as direções (<code>collidable_horizontal</code> e <code>collidable_vertical</code> são <code>True</code>)
+- <strong>Plataformas de mão única</strong>: Permitem que o jogador pule através delas de baixo, mas fornecem suporte quando atingidas por cima (apenas <code>collidable_vertical</code> é <code>True</code>)
+- <strong>Plataformas atravessáveis</strong>: Permitem que o jogador desça através delas pressionando para baixo (<code>can_descend</code> é <code>True</code>)</p>
+<h3 id="a-classe-item">A Classe Item</h3>
+<p>Definida em <code>item.py</code>, a classe <code>Item</code> representa objetos coletáveis ou interativos no jogo:</p>
+<pre><code class="language-python">from entity import Entity
+
+class Item(Entity):
+    def __init__(self, data):
+        super().__init__(data)
+</code></pre>
+<p>A implementação da classe <code>Item</code> está em desenvolvimento, servindo como base para expansão futura. Possíveis extensões incluem:
+- Adicionar lógica para coletar itens
+- Implementar efeitos para diferentes tipos de itens
+- Criar animações para itens</p>
+<h2 id="sistema-de-colisoes">Sistema de Colisões</h2>
+<p>Atualmente, a detecção de colisão no 2Do é implementada principalmente na classe <code>Player</code> (em <code>player.py</code>), utilizando o módulo <code>pygame.Rect</code>.</p>
+<h3 id="verificacao-basica-de-colisao">Verificação Básica de Colisão</h3>
+<pre><code class="language-python">def check_collision(self, rect1, rect2):
+    return pygame.Rect(rect1).colliderect(pygame.Rect(rect2))
+</code></pre>
+<p>Este método simples verifica se dois retângulos se sobrepõem, sendo a base para todas as colisões no jogo.</p>
+<h3 id="colisao-horizontal">Colisão Horizontal</h3>
+<pre><code class="language-python">def handle_horizontal_collision(self, new_x, current_y, tiles):
+    player_rect = (
+        new_x * SPRITE_BLOCK_SIZE,
+        current_y * SPRITE_BLOCK_SIZE,
+        self.width,
+        self.height,
+    )
+    for tile in tiles:
+        if tile.collidable_horizontal:
+            for position in tile.position:
+                tile_rect = (
+                    position[0] * SPRITE_BLOCK_SIZE,
+                    position[1] * SPRITE_BLOCK_SIZE,
+                    tile.width,
+                    tile.height,
+                )
+                if self.check_collision(player_rect, tile_rect):
+                    return self.x  # Reset x position if collision detected
+    return new_x  # Otherwise, return new x position
+</code></pre>
+<p>Este método verifica colisões horizontais:
+1. Cria um retângulo representando o jogador na nova posição horizontal
+2. Verifica colisões com todos os tiles marcados como <code>collidable_horizontal</code>
+3. Se uma colisão for detectada, mantém a posição X atual do jogador
+4. Caso contrário, permite o movimento para a nova posição X</p>
+<h3 id="colisao-vertical">Colisão Vertical</h3>
+<pre><code class="language-python">def handle_vertical_collision(self, current_x, new_y, tiles, delta_time):
+    player_rect = (
+        current_x * SPRITE_BLOCK_SIZE,
+        new_y * SPRITE_BLOCK_SIZE,
+        self.width,
+        self.height,
+    )
+    for tile in tiles:
+        if tile.collidable_vertical:
+            for position in tile.position:
+                tile_rect = (
+                    position[0] * SPRITE_BLOCK_SIZE,
+                    position[1] * SPRITE_BLOCK_SIZE,
+                    tile.width,
+                    tile.height,
+                )
+                if self.check_collision(player_rect, tile_rect):
+                    player_top = round(self.y) * SPRITE_BLOCK_SIZE
+                    player_bottom = (
+                        round(self.y) * SPRITE_BLOCK_SIZE + SPRITE_BLOCK_SIZE * 2
+                    )
+
+                    tile_top = tile_rect[1]
+                    tile_bottom = tile_rect[1] + tile_rect[3]
+
+                    # Colidindo &quot;por cima&quot;
+                    if self.vertical_velocity &gt; 0 and self.state != &quot;descend&quot;:
+                        # Plataforma está abaixo do pé do personagem?
+                        if player_bottom &lt;= tile_top:
+                            self.on_ground = True
+                            self.vertical_velocity = 0
+                            return round(self.y)
+                    # Colidindo &quot;por baixo&quot;
+                    elif self.vertical_velocity &lt; 0:
+                        pass
+
+    if not self.on_ground:
+        self.vertical_velocity += self.gravity * delta_time
+
+    return new_y  # Caso contrário, retorna a nova posição y
+</code></pre>
+<p>Este método lida com colisões verticais com mais detalhe:
+1. Verifica colisões com tiles marcados como <code>collidable_vertical</code>
+2. Distingue entre colisões por cima (jogador aterrissando na plataforma) e por baixo (jogador batendo a cabeça)
+3. Quando o jogador atinge uma plataforma por cima:
+   - Define <code>on_ground</code> como verdadeiro
+   - Zera a velocidade vertical
+   - Mantém a posição Y atual
+4. Se não houver colisão e o jogador não estiver no chão, aplica gravidade
+5. Retorna a nova posição Y (ajustada devido à colisão)</p>
+<h3 id="descida-atraves-de-plataformas">Descida através de Plataformas</h3>
+<pre><code class="language-python"># Lógica de descida
+if (
+    input_handler.is_pressed(&quot;down&quot;)
+    and self.on_ground
+    and (state == &quot;idle&quot; or state == &quot;run&quot;)
+):
+    for tile in tiles:
+        if tile.can_descend:
+            for position in tile.position:
+                tile_rect = (
+                    position[0] * SPRITE_BLOCK_SIZE,
+                    position[1] * SPRITE_BLOCK_SIZE,
+                    tile.width,
+                    tile.height,
+                )
+                player_rect = (
+                    self.x * SPRITE_BLOCK_SIZE,
+                    self.y * SPRITE_BLOCK_SIZE
+                    + 0.2,  # Checar logo abaixo do jogador
+                    self.width,
+                    self.height,
+                )
+                if self.check_collision(player_rect, tile_rect):
+                    self.state = &quot;descend&quot;
+                    self.on_ground = False
+                    self.vertical_velocity = self.gravity * delta_time
+                    self.descend_time_current = 0
+                    return
+</code></pre>
+<p>Esta lógica permite que o jogador desça através de plataformas atravessáveis:
+1. Verifica se o jogador está pressionando para baixo, está no chão e em um estado apropriado
+2. Verifica se o jogador está sobre uma plataforma com <code>can_descend</code> ativado
+3. Se verdadeiro, altera o estado para "descend", permite a queda e inicia um temporizador de descida</p>
+<h2 id="ciclo-de-atualizacao-de-entidades">Ciclo de Atualização de Entidades</h2>
+<p>O processo de atualização de entidades ocorre a cada quadro do jogo:</p>
+<ol>
+<li>
+<p><strong>Game Loop</strong> (em <code>main.py</code>):
+   <code>python
+   while running:
+       delta_time = clock.tick(60) / 1000.0
+       input_handler.process_events()
+       game.update(delta_time, input_handler)
+       game.render(game.screen)
+       pygame.display.update()</code></p>
+</li>
+<li>
+<p><strong>Game Update</strong> (em <code>game.py</code>):
+   <code>python
+   def update(self, delta_time, input_handler):
+       if self.background:
+           self.background.update(delta_time)
+       if self.item:
+           self.item.update(delta_time)
+       if self.platform:
+           self.platform.update(delta_time)
+       if self.player:
+           self.player.update(delta_time, input_handler, self.platform.tiles)</code></p>
+</li>
+<li>
+<p><strong>Entity Update</strong> (em <code>entity.py</code> e classes derivadas):</p>
+</li>
+<li>Entidades básicas apenas atualizam animações</li>
+<li>O jogador tem lógica adicional para movimento, física e colisões</li>
+</ol>
+<p>Este padrão de atualização em cascata garante que todas as entidades sejam processadas a cada quadro, com lógica específica implementada nas subclasses conforme necessário.</p>
+<h2 id="resumo-do-sistema-de-entidades">Resumo do Sistema de Entidades</h2>
+<p>O sistema de entidades do 2Do fornece:</p>
+<ol>
+<li><strong>Abstração flexível</strong>: A classe <code>Entity</code> serve como base para todos os objetos interativos</li>
+<li><strong>Animação simples</strong>: Suporte incorporado para animar sprites através da classe <code>Tile</code></li>
+<li><strong>Detecção de colisão</strong>: Métodos para verificar e responder a colisões entre entidades</li>
+<li><strong>Física básica</strong>: Implementação de gravidade, salto e movimento para o jogador</li>
+<li><strong>Extensibilidade</strong>: Facilidade para adicionar novos tipos de entidades herdando da classe base</li>
+</ol>
+<p>Esta arquitetura torna o 2Do adequado para desenvolver jogos de plataforma 2D com diversos tipos de objetos interativos, mantendo o código organizado e modular.</p>
+<h2 id="proximos-passos">Próximos Passos</h2>
+<p>Agora que você compreende o sistema de entidades, pode explorar:</p>
+<ul>
+<li><a href="../logica_jogo/">Lógica de Jogo e Jogador</a> - Detalhes sobre a implementação do personagem jogável</li>
+<li><a href="../controle/">Sistema de Entrada e Controle</a> - Como o jogo processa entrada do usuário</li>
+<li><a href="../assets/">Sistema de Gerenciamento de Recursos</a> - Como os recursos são carregados e utilizados pelas entidades</li>
 </ul>
 
 
@@ -491,10 +1237,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

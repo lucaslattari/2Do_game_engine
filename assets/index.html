@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="stylesheets/main.4af4bdda.min.css">
       
       
 
@@ -60,6 +60,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#sistema-de-gerenciamento-de-recursos" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -191,6 +196,7 @@
   
   <span class="md-ellipsis">
     Introdução
+    
   </span>
   
 
@@ -211,6 +217,7 @@
   
   <span class="md-ellipsis">
     Configuração e Setup
+    
   </span>
   
 
@@ -231,6 +238,7 @@
   
   <span class="md-ellipsis">
     Estrutura Geral do Projeto
+    
   </span>
   
 
@@ -252,16 +260,164 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sistema de Gerenciamento de Recursos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     Sistema de Gerenciamento de Recursos
+    
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-assetmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe AssetManager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processo-de-carregamento-de-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processo de Carregamento de Recursos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processo de Carregamento de Recursos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inicializacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inicialização
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-metodo-load_tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Método load_tiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-metodo-update_tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Método update_tiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-metodo-load_sprites" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Método load_sprites
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acessando-os-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acessando os Recursos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propriedades-especiais-de-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedades Especiais de Tiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-dados-de-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura de Dados de Tiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dicas-para-criar-mapas-compativeis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dicas para Criar Mapas Compatíveis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -279,6 +435,7 @@
   
   <span class="md-ellipsis">
     Entidades e Objetos do Jogo
+    
   </span>
   
 
@@ -299,6 +456,7 @@
   
   <span class="md-ellipsis">
     Sistema de Entrada e Controle
+    
   </span>
   
 
@@ -319,6 +477,7 @@
   
   <span class="md-ellipsis">
     Lógica de Jogo e Jogador
+    
   </span>
   
 
@@ -339,6 +498,7 @@
   
   <span class="md-ellipsis">
     Plano de Fundo e Interface
+    
   </span>
   
 
@@ -359,6 +519,7 @@
   
   <span class="md-ellipsis">
     Utilitários e Configuração Adicional
+    
   </span>
   
 
@@ -379,6 +540,7 @@
   
   <span class="md-ellipsis">
     Arquivo Principal e Execução
+    
   </span>
   
 
@@ -399,6 +561,7 @@
   
   <span class="md-ellipsis">
     Referências e Recursos Adicionais
+    
   </span>
   
 
@@ -424,6 +587,130 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-classe-assetmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Classe AssetManager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processo-de-carregamento-de-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processo de Carregamento de Recursos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processo de Carregamento de Recursos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inicializacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inicialização
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-metodo-load_tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Método load_tiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-metodo-update_tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Método update_tiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-metodo-load_sprites" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Método load_sprites
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acessando-os-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acessando os Recursos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propriedades-especiais-de-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedades Especiais de Tiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-dados-de-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura de Dados de Tiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dicas-para-criar-mapas-compativeis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dicas para Criar Mapas Compatíveis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -438,13 +725,222 @@
                   
 
 
-  <h1>Sistema de Gerenciamento de Recursos</h1>
 
+<h1 id="sistema-de-gerenciamento-de-recursos">Sistema de Gerenciamento de Recursos</h1>
+<p>Este documento explica como o 2Do gerencia recursos gráficos (sprites, tiles) e outros assets necessários para o funcionamento do jogo.</p>
+<h2 id="visao-geral">Visão Geral</h2>
+<p>O sistema de gerenciamento de recursos do 2Do é centralizado no arquivo <code>asset_manager.py</code>, que contém a classe <code>AssetManager</code>. Esta classe é responsável por:</p>
+<ol>
+<li>Carregar tiles e sprites de arquivos de mapa (formato TMX)</li>
+<li>Organizar os recursos por tipo (Player, Item, Platform, etc.)</li>
+<li>Extrair propriedades importantes (colisão, animação)</li>
+<li>Fornecer acesso fácil aos recursos para outras partes do motor</li>
+</ol>
+<p>O 2Do utiliza a biblioteca PyTMX para carregar mapas criados com o Tiled Map Editor, o que permite aos desenvolvedores criar níveis visualmente e definir propriedades personalizadas para cada elemento do jogo.</p>
+<h2 id="a-classe-assetmanager">A Classe AssetManager</h2>
+<pre><code class="language-python">class AssetManager:
+    def __init__(self, level, tile_types=None):
+        if tile_types is None:
+            tile_types = [&quot;Player&quot;, &quot;Item&quot;, &quot;Platform&quot;]
+        self.tile_types = tile_types
+        self.tiles = self.load_tiles(level)
+        self.tile_width = level.tilewidth
+        self.tile_height = level.tileheight
+</code></pre>
+<p>O construtor da classe aceita dois parâmetros:
+- <code>level</code>: O objeto de nível carregado pelo PyTMX (contém todas as informações do mapa)
+- <code>tile_types</code>: Uma lista opcional de tipos de tiles a serem carregados (padrão: Player, Item, Platform)</p>
+<h2 id="processo-de-carregamento-de-recursos">Processo de Carregamento de Recursos</h2>
+<h3 id="inicializacao">Inicialização</h3>
+<p>Quando um nível é carregado na classe <code>Game</code> através do método <code>load_level()</code>, o seguinte processo ocorre:</p>
+<ol>
+<li>O arquivo TMX é carregado usando <code>pytmx.load_pygame()</code></li>
+<li>Uma instância de <code>AssetManager</code> é criada, recebendo o nível carregado</li>
+<li>O <code>AssetManager</code> extrai todos os recursos e propriedades do arquivo TMX</li>
+<li>Os recursos são agrupados por tipo e disponibilizados para as entidades do jogo</li>
+</ol>
+<pre><code class="language-python"># Trecho de game.py
+def load_level(self, level_filename):
+    try:
+        self.tiled_level = pytmx.load_pygame(level_filename)
+        self.load_assets()
+        # ...
+    except Exception as e:
+        print(f&quot;Erro ao carregar o nível: {e}&quot;)
+
+def load_assets(self):
+    self.asset_manager = AssetManager(self.tiled_level)
+
+    self.player = Player(self.asset_manager.get_asset(&quot;Player&quot;))
+    self.item = Item(self.asset_manager.get_asset(&quot;Item&quot;))
+    self.platform = Platform(self.asset_manager.get_asset(&quot;Platform&quot;))
+</code></pre>
+<h3 id="o-metodo-load_tiles">O Método load_tiles</h3>
+<p>O método <code>load_tiles</code> é o coração do sistema de carregamento de recursos:</p>
+<pre><code class="language-python">def load_tiles(self, level):
+    tiles = {tile_type: [] for tile_type in self.tile_types}
+    gid_to_position = {}
+
+    # Reunir posições dos GIDs
+    for layer in level.layers:
+        for x, y, gid in layer:
+            gid_to_position.setdefault(gid, []).append((x, y))
+
+    # Populando os tiles
+    for tileset in level.tilesets:
+        for gid in range(tileset.firstgid, tileset.firstgid + tileset.tilecount):
+            tile = level.get_tile_properties_by_gid(gid)
+            if not tile:
+                continue
+
+            tile[&quot;gid&quot;] = gid
+
+            # Verificar as propriedades especiais
+            tile[&quot;collidable_horizontal&quot;] = tile.get(&quot;collidable_horizontal&quot;, False)
+            tile[&quot;collidable_vertical&quot;] = tile.get(&quot;collidable_vertical&quot;, False)
+            tile[&quot;can_descend&quot;] = tile.get(&quot;can_descend&quot;, False)
+
+            self.update_tiles(tile, tiles, gid_to_position.get(gid), level)
+
+    return tiles
+</code></pre>
+<p>Vamos analisar como este método funciona:</p>
+<ol>
+<li><strong>Preparação das estruturas de dados</strong>:</li>
+<li>Cria um dicionário <code>tiles</code> para armazenar tiles organizados por tipo. Tiles podem ser de plataforma (por exemplo, um bloco de terra ou pedra onde o jogador caminha), de jogador (posição do personagem principal) e de item (pode ser uma moeda, power-up ou chave).</li>
+<li>Cria um dicionário <code>gid_to_position</code> para mapear identificadores globais (GIDs) para suas posições no mapa. O GID significa "Global Identifier", ou seja, um número de série único para cada tipo de tile do jogo. </li>
+</ol>
+<p>Este dicionário é como um mapa que diz: "Este tipo de bloco (GID) aparece nestas coordenadas do mapa". Por exemplo:</p>
 <ul>
-<li>Arquivo: asset_manager.py.</li>
-<li>Como os recursos são carregados.</li>
-<li>Explicação de load_tiles e load_sprites.</li>
-<li>Como os ativos são gerenciados e recuperados.</li>
+<li>O bloco de terra (GID 101) aparece nas posições (5,10), (6,10) e (7,10) - formando uma plataforma horizontal</li>
+<li>A moeda dourada (GID 201) aparece na posição (5,5) - flutuando acima da plataforma</li>
+<li>O personagem (GID 301) aparece na posição (7,3) - posicionado para pular na plataforma</li>
+</ul>
+<p>Este mapeamento permite que o jogo saiba onde colocar cada elemento visual na tela.</p>
+<ol>
+<li><strong>Mapeamento de posições</strong>:</li>
+<li>Percorre todas as camadas do mapa</li>
+<li>
+<p>Para cada tile encontrado, registra sua posição (x, y) no dicionário <code>gid_to_position</code></p>
+</li>
+<li>
+<p><strong>Processamento de tilesets</strong>:</p>
+</li>
+<li>Percorre todos os tilesets carregados</li>
+<li>Para cada GID válido, obtém as propriedades associadas</li>
+<li>Adiciona o GID às propriedades e configura flags de colisão (indicando quais tiles podem ser atravessados ou não pelo jogador)</li>
+<li>Chama <code>update_tiles</code> para processar os tiles e organizá-los por tipo</li>
+</ol>
+<h3 id="o-metodo-update_tiles">O Método update_tiles</h3>
+<p>Este método categoriza os tiles com base em seu tipo e prepara-os para uso no jogo:</p>
+<pre><code class="language-python">def update_tiles(self, tile, tiles, gid_to_position, level):
+    tile_type = tile.get(&quot;type&quot;)
+    if tile_type and any(tile_type.startswith(term) for term in self.tile_types):
+        tile[&quot;sprites&quot;] = self.load_sprites(level, tile)
+
+        if gid_to_position:
+            tile[&quot;position&quot;] = gid_to_position
+
+        if &quot;_&quot; in tile_type:
+            tile_type = tile_type.split(&quot;_&quot;)[0]
+
+        if &quot;position&quot; in tile:
+            tiles[tile_type].append(tile)
+</code></pre>
+<p>Este método:
+1. Verifica se o tile possui um tipo definido que corresponde a um dos tipos esperados
+2. Carrega os sprites associados ao tile através do método <code>load_sprites</code>
+3. Adiciona informações de posição ao tile
+4. Processa o tipo do tile (removendo qualquer sufixo após o underscore)
+5. Adiciona o tile ao dicionário de tiles do tipo apropriado</p>
+<h3 id="o-metodo-load_sprites">O Método load_sprites</h3>
+<p>O método <code>load_sprites</code> é responsável por carregar as imagens dos tiles, incluindo suporte para animações:</p>
+<pre><code class="language-python">def load_sprites(self, level, tile):
+    sprites = []
+    frames = tile.get(&quot;frames&quot;, [])
+
+    if not frames:
+        sprite = level.get_tile_image_by_gid(tile[&quot;gid&quot;])
+        if sprite:
+            sprites.append(sprite)
+    else:
+        for frame in frames:
+            sprite = level.get_tile_image_by_gid(frame.gid)
+            if sprite:
+                sprites.append(sprite)
+    return sprites
+</code></pre>
+<p>Este método:
+1. Verifica se o tile possui frames de animação definidos
+2. Se não houver frames, carrega a imagem estática do tile
+3. Se houver frames, carrega cada frame como um sprite separado
+4. Retorna uma lista de sprites que pode conter uma única imagem (tile estático) ou múltiplas imagens (animação)</p>
+<h2 id="acessando-os-recursos">Acessando os Recursos</h2>
+<p>Após o carregamento, os recursos podem ser acessados através do método <code>get_asset</code>:</p>
+<pre><code class="language-python">def get_asset(self, asset_type):
+    return self.tiles.get(asset_type, [])
+</code></pre>
+<p>Este método retorna todos os tiles de um determinado tipo (por exemplo, "Player", "Item", "Platform"). Esses tiles são então passados para as classes correspondentes durante a inicialização:</p>
+<pre><code class="language-python"># Em game.py
+self.player = Player(self.asset_manager.get_asset(&quot;Player&quot;))
+self.item = Item(self.asset_manager.get_asset(&quot;Item&quot;))
+self.platform = Platform(self.asset_manager.get_asset(&quot;Platform&quot;))
+</code></pre>
+<h2 id="propriedades-especiais-de-tiles">Propriedades Especiais de Tiles</h2>
+<p>O AssetManager reconhece e processa propriedades especiais definidas no Tiled Map Editor:</p>
+<ul>
+<li><strong><code>collidable_horizontal</code></strong>: Indica se o tile causa colisão horizontal (impede movimento lateral)</li>
+<li><strong><code>collidable_vertical</code></strong>: Indica se o tile causa colisão vertical (impede movimento para cima/baixo)</li>
+<li><strong><code>can_descend</code></strong>: Indica se o jogador pode descer através da plataforma (pressionando para baixo)</li>
+</ul>
+<p>Estas propriedades devem ser definidas no Tiled Map Editor como propriedades personalizadas dos tiles.</p>
+<h2 id="estrutura-de-dados-de-tiles">Estrutura de Dados de Tiles</h2>
+<p>Cada tile processado pelo AssetManager possui a seguinte estrutura:</p>
+<pre><code class="language-python">{
+    &quot;gid&quot;: 123,                        # Identificador global do tile
+    &quot;width&quot;: 16,                       # Largura do tile em pixels
+    &quot;height&quot;: 16,                      # Altura do tile em pixels
+    &quot;position&quot;: [(x1, y1), (x2, y2)],  # Lista de posições no mapa
+    &quot;sprites&quot;: [sprite1, sprite2],     # Lista de sprites (um ou mais para animação)
+    &quot;collidable_horizontal&quot;: True,     # Flag de colisão horizontal
+    &quot;collidable_vertical&quot;: True,       # Flag de colisão vertical
+    &quot;can_descend&quot;: False,              # Flag para permitir descida
+    &quot;type&quot;: &quot;Platform&quot;                 # Tipo do tile
+}
+</code></pre>
+<h2 id="dicas-para-criar-mapas-compativeis">Dicas para Criar Mapas Compatíveis</h2>
+<p>Para criar mapas compatíveis com o sistema de assets do 2Do:</p>
+<ol>
+<li><strong>Nomeie corretamente os tipos de tiles</strong>:</li>
+<li>Para o jogador: "Player_idle", "Player_run", "Player_jump"</li>
+<li>Para plataformas: "Platform"</li>
+<li>
+<p>Para itens: "Item"</p>
+</li>
+<li>
+<p><strong>Configure propriedades de colisão</strong>:</p>
+</li>
+<li>Adicione propriedades booleanas <code>collidable_horizontal</code> e <code>collidable_vertical</code> às plataformas</li>
+<li>
+<p>Para plataformas que permitem descida, defina <code>can_descend</code> como <code>true</code></p>
+</li>
+<li>
+<p><strong>Configure animações</strong>:</p>
+</li>
+<li>Para tiles animados, configure os frames no Tiled Map Editor</li>
+<li>
+<p>O AssetManager carregará automaticamente todos os frames</p>
+</li>
+<li>
+<p><strong>Organize camadas no Tiled</strong>:</p>
+</li>
+<li>Separe diferentes tipos de entidades em camadas distintas para melhor organização</li>
+</ol>
+<h2 id="proximos-passos">Próximos Passos</h2>
+<p>Agora que você entende como o 2Do gerencia recursos, pode explorar:</p>
+<ul>
+<li><a href="../entidades/">Entidades e Objetos do Jogo</a> - Como os recursos carregados são utilizados pelas entidades</li>
+<li><a href="../plano_fundo/">Plano de Fundo e Interface</a> - Como o sistema de fundo usa recursos de imagem</li>
 </ul>
 
 
@@ -492,10 +988,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="javascripts/bundle.83f73b43.min.js"></script>
+      <script src="javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
